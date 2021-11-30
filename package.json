@@ -1,0 +1,22 @@
+{
+  "name": "JS-grund_Grupparbete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^9.1.0",
+    "parcel": "^2.0.1",
+    "typescript": "^4.5.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel src/index.html",
+    "cyp": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
