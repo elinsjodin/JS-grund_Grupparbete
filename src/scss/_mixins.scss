@@ -1,0 +1,12 @@
+//media query for tablet
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+//media query for desktop
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
