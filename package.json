@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel src/index.html",
+    "build": "parcel src/index.html src/pages/cart.html src/pages/checkout.html src/pages/productpage.html src/pages/details.html src/pages/thankyou.html",
     "cyp": "cypress open"
   },
   "keywords": [],
