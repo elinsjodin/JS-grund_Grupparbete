@@ -459,6 +459,25 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"7BLcd":[function(require,module,exports) {
+window.onload = function() {
+    hamburgerMenu();
+};
+function hamburgerMenu() {
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    let hamburgerBtnOpen = false;
+    hamburgerBtn.addEventListener("click", ()=>{
+        if (!hamburgerBtnOpen) {
+            hamburgerBtn.classList.add("is-open");
+            dropdownMenu.classList.add("is-down");
+            hamburgerBtnOpen = true;
+        } else {
+            hamburgerBtn.classList.remove("is-open");
+            dropdownMenu.classList.remove("is-down");
+            hamburgerBtnOpen = false;
+        }
+    });
+}
 
 },{}]},["e4k7L","7BLcd"], "7BLcd", "parcelRequire9be1")
 
