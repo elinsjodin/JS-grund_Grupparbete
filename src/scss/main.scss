@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-.nav-container {
+#nav-container {
+  display: flex;
   padding: 10px;
   #hamburger-btn {
     width: 30px;
