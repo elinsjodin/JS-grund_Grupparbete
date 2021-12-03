@@ -459,6 +459,79 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"7BLcd":[function(require,module,exports) {
+var _navbar = require("./navbar");
+window.onload = function() {
+    _navbar.myNavBar();
+};
+
+},{"./navbar":"im4XN"}],"im4XN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "myNavBar", ()=>myNavBar
+);
+function myNavBar() {
+    let navBarContainer = document.getElementById("nav-container");
+    // hamburger menu button
+    let hamburgerContainer = document.createElement("div");
+    let hamburgerButton = document.createElement("div");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    hamburgerContainer.id = "hamburger-btn";
+    hamburgerButton.className = "menu-btn";
+    hamburgerContainer.appendChild(hamburgerButton);
+    navBarContainer.appendChild(hamburgerContainer);
+    let hamburgerBtnOpen = false;
+    hamburgerContainer.addEventListener("click", ()=>{
+        if (!hamburgerBtnOpen) {
+            hamburgerContainer.classList.add("is-open");
+            dropdownMenu.classList.add("is-down");
+            hamburgerBtnOpen = true;
+        } else {
+            hamburgerContainer.classList.remove("is-open");
+            dropdownMenu.classList.remove("is-down");
+            hamburgerBtnOpen = false;
+        }
+    });
+    // LOGO
+    // CARTBUTTON
+    let cartButton = document.createElement("button");
+    cartButton.setAttribute("type", "button");
+    cartButton.className = "cart-button";
+    cartButton.innerHTML = "<i class='bi bi-bag'></i>";
+    cartButton.addEventListener("click", ()=>{
+        location.href = "pages/cart.html";
+    });
+    navBarContainer.appendChild(cartButton);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["e4k7L","7BLcd"], "7BLcd", "parcelRequire9be1")
 

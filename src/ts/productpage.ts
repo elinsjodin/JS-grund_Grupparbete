@@ -1,9 +1,12 @@
+import { myNavBar } from "./navbar";
+
 import { Product } from "./models/products";
 
 import perfumeimage from "./../components/perfumebottle.jpg";
 
 window.onload = function () {
   start();
+  myNavBar();
 };
 
 let pr1: Product = new Product(
@@ -99,6 +102,3 @@ function render() {
 function redirect(productId: string) {
   location.href = "pages/details.html?id=" + productId;
 }
-
-// let perfumeName = productList[i].name;
-// productDiv.innerHTML = perfumeName;

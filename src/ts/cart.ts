@@ -1,7 +1,10 @@
+import { myNavBar } from "./navbar";
+
 import { Product } from "./models/products";
 
 window.onload = function () {
   loadCart();
+  myNavBar();
 };
 
 let LOCAL_STORAGE_CART_KEY = "product.items";
