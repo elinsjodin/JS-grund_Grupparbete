@@ -23,7 +23,7 @@ function saveProducts() {
   localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(products));
 }
 
-function addToCart(p: Product) {
+function addToCart(event, p: Product) {
   event.preventDefault();
 
   cart.push(newProduct);
