@@ -90,7 +90,9 @@ function render() {
     let productName: HTMLHeadElement = document.createElement("h2");
     productName.id = "productName";
     productName.innerHTML = productList[i].name;
-    //productName.addEventListener("click", redirect);
+    productName.addEventListener("click", () => {
+      redirect(productList[i].id);
+    });
 
     productDiv.appendChild(productImg);
     productDiv.appendChild(price);
