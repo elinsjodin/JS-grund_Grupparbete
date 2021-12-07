@@ -110,5 +110,5 @@ function render() {
 }
 
 function redirect(productId: string) {
-  location.href = "pages/details.html?id=" + productId;
+  location.href = "details.html?id=" + productId;
 }
