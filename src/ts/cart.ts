@@ -14,25 +14,25 @@ let products = JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY));
 
 let addBtn: HTMLButtonElement = document.createElement("button");
 addBtn.id = "addBtn";
-addBtn.addEventListener("change", () => {
-  incrementCart();
+addBtn.addEventListener("click", () => {
+  incrementCart(cartList[i].name);
 });
 
-let removeBtn: HTMLButtonElement = document.createElement("button");
-removeBtn.id = "removeBtn";
-removeBtn.addEventListener("change", decrementCart);
+let subBtn: HTMLButtonElement = document.createElement("button");
+subBtn.id = "removeBtn";
+subBtn.addEventListener("click", decrementCart);
 
 let cart = [];
 
 function incrementCart(img: string, name: string, price: string) {
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i].name === name) {
-      cart[i].qty += 1;
+  for (let i = 0; i < cartList.length; i++) {
+    if (cartList[i].name === name) {
+      cartList[i].qty += 1;
       return;
     }
   }
   let item = { img, name, price, qty: 1 };
-  cart.push(item);
+  cartList.push(item);
 }
 
 function decrementCart() {}
