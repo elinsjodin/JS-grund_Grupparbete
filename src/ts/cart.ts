@@ -1,8 +1,8 @@
-import { myNavBar } from "./navbar";
+import { myNavBar } from "./functions/navbar"
 
 import { Product } from "./models/products";
 
-import { handleLocalStorage } from "./localStorage";
+import { cartList, localStorageKey } from "./functions/localStorage";
 
 window.onload = function () {
   loadCart();
@@ -21,8 +21,7 @@ function loadCart() {
 }
 
 function saveProducts() {
-  handleLocalStorage();
-  localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(products));
+  localStorage.setItem(localStorageKey, JSON.stringify(cartList));
 }
 
 function addToCart(event, p: Product) {

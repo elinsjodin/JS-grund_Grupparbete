@@ -1,4 +1,4 @@
-import { myNavBar } from "./navbar";
+import { myNavBar } from "./functions/navbar"
 
 import { Product } from "./models/products";
 

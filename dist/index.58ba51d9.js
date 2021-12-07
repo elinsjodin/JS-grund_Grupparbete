@@ -459,12 +459,12 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"7BLcd":[function(require,module,exports) {
-var _navbar = require("./navbar");
+var _navbar = require("./functions/navbar");
 window.onload = function() {
     _navbar.myNavBar();
 };
 
-},{"./navbar":"im4XN"}],"im4XN":[function(require,module,exports) {
+},{"./functions/navbar":"fUsK1"}],"fUsK1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "myNavBar", ()=>myNavBar

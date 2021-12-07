@@ -3,9 +3,13 @@ export class Detail {
   desc: string;
   ing: string;
 
-  constructor() {
+  constructor(
+    img: HTMLImageElement,
+    desc: string,
+    ing: string
+    ) {
     this.img;
     this.desc = "";
-    this.ing = "Ingredients:" + " " + "Alcohol, Aqua, Parfum (fragrance).";
+    this.ing = "Ingredients:" + " " + "Alcohol, Aqua, Parfume (fragrance).";
   }
 }
