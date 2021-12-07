@@ -12,51 +12,62 @@ let pr1: Product = new Product(
   1050 + ":-",
   "1"
 );
-// pr1.img =
-//   "/Users/elinsjodin/Desktop/Studier/Javascript/JS-grund_Grupparbete/components/perfumebottle.jpg";
-// pr1.name = "No.1" + " " + "Musk";
-// pr1.price;
-// pr1.viewPr;
+let pr2: Product = new Product(
+  perfumeimage,
+  "No.2" + " " + "Vanilla",
+  1050 + ":-",
+  "2"
+);
+let pr3: Product = new Product(
+  perfumeimage,
+  "No.3" + " " + "Sandalwood",
+  1050 + ":-",
+  "3"
+);
+let pr4: Product = new Product(
+  perfumeimage,
+  "No.4" + " " + "Citrus Noir",
+  1050 + ":-",
+  "4"
+);
+let pr5: Product = new Product(
+  perfumeimage,
+  "No.5" + " " + "Oud",
+  1050 + ":-",
+  "5"
+);
+let pr6: Product = new Product(
+  perfumeimage,
+  "No.6" + " " + "Amber",
+  1050 + ":-",
+  "6"
+);
+let pr7: Product = new Product(
+  perfumeimage,
+  "No.7" + " " + "Bergamot",
+  1050 + ":-",
+  "7"
+);
+let pr8: Product = new Product(
+  perfumeimage,
+  "No.8" + " " + "Orange Basil",
+  1050 + ":-",
+  "8"
+);
+let pr9: Product = new Product(
+  perfumeimage,
+  "No.9" + " " + "Ylang-Ylang",
+  1050 + ":-",
+  "9"
+);
+let pr10: Product = new Product(
+  perfumeimage,
+  "No.10" + " " + "Geranium",
+  1050 + ":-",
+  "10"
+);
 
-// let pr2: Product = new Product();
-// pr2.img = productImg;
-// pr2.name = "No.2" + " " + "Vanilla";
-
-// let pr3: Product = new Product();
-// pr3.img = productImg;
-// pr3.name = "No.3" + " " + "Sandalwood";
-
-// let pr4: Product = new Product();
-// pr4.img = productImg;
-// pr4.name = "No.4" + " " + "Citrus Noir";
-
-// let pr5: Product = new Product();
-// pr5.img = productImg;
-// pr5.name = "No.5" + " " + "Oud";
-
-// let pr6: Product = new Product();
-// pr6.img = productImg;
-// pr6.name = "No.6" + " " + "Amber";
-
-// let pr7: Product = new Product();
-// pr7.img = productImg;
-// pr7.name = "No.7" + " " + "Bergamot";
-
-// let pr8: Product = new Product();
-// pr8.img = productImg;
-// pr8.name = "No.8" + " " + "Orange Basil";
-
-// let pr9: Product = new Product();
-// pr9.img = productImg;
-// pr9.name = "No.9" + " " + "Ylang-Ylang";
-
-// let pr10: Product = new Product();
-// pr10.img = productImg;
-// pr10.name = "No.10" + " " + "Geranium";
-
-let productList = [pr1];
-
-// pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10
+let productList = [pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10];
 
 function start() {
   render();
@@ -87,7 +98,9 @@ function render() {
     let productName: HTMLHeadElement = document.createElement("h2");
     productName.id = "productName";
     productName.innerHTML = productList[i].name;
-    //productName.addEventListener("click", redirect);
+    productName.addEventListener("click", () => {
+      redirect(productList[i].id);
+    });
 
     productDiv.appendChild(productImg);
     productDiv.appendChild(price);
@@ -99,6 +112,3 @@ function render() {
 function redirect(productId: string) {
   location.href = "pages/details.html?id=" + productId;
 }
-
-// let perfumeName = productList[i].name;
-// productDiv.innerHTML = perfumeName;
