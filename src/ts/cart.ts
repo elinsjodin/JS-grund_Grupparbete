@@ -9,9 +9,6 @@ window.onload = function () {
   myNavBar();
 };
 
-let LOCAL_STORAGE_CART_KEY = "product.items";
-let products = JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY));
-
 let addBtn: HTMLButtonElement = document.createElement("button");
 addBtn.id = "addBtn";
 addBtn.addEventListener("click", () => {
@@ -44,10 +41,6 @@ function loadCart() {
   addToCartBtn.addEventListener("click", addToCart);
 
   btnDiv.appendChild(addToCartBtn);
-}
-
-function saveProducts() {
-  localStorage.setItem(LOCAL_STORAGE_CART_KEY, JSON.stringify(products));
 }
 
 function addToCart(event, p: Product) {
