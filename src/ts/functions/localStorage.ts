@@ -1,2 +1,6 @@
-export let cartList: (string | number)[] = [];
-export let localStorageKey = JSON.parse(localStorage.getItem("localStorageKey"));
+import { Product } from "../models/products";
+
+export let cartList: Product[] = [];
+export let localStorageKey = JSON.parse(
+  localStorage.getItem("localStorageKey")
+);
