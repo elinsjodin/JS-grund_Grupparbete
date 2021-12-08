@@ -1,13 +1,11 @@
+import { Product } from "./products";
+
 export class Item {
-  img: string;
-  name: string;
-  price: number | string;
+  product: Product;
   qty: number;
 
-  constructor(img: string, name: string, price: string | number, qty: number) {
-    this.img = img;
-    this.name = name;
-    this.price = price;
+  constructor(product: Product, qty: number) {
+    this.product = product;
     this.qty = qty;
   }
 }
