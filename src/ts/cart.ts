@@ -89,22 +89,6 @@ function incrementCart(qtyInput) {
   saveInLocalStorage();
 }
 
-// Flytta denna kod till details.ts
-// function addToCart(productToAdd: Product) {
-//   for (let i = 0; i < cart.length; i++) {
-//     if (cart[i].product.name === productToAdd.name) {
-//       cart[i].qty += 1;
-//       return;
-//     }
-//     let item: Item = {
-//       product: productToAdd,
-//       qty: 1,
-//     };
-//     cart.push(item);
-//   }
-//   saveInLocalStorage();
-// }
-
 function removeItemFromCart(productToRemove: Product) {
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].product.name === productToRemove.name) {
@@ -114,11 +98,6 @@ function removeItemFromCart(productToRemove: Product) {
   updateCartTotal();
   saveInLocalStorage();
 }
-
-// let item: Item = {
-//       product: productToRemove,
-//       qty: 1,
-//     };
 
 function quantityChanged(qtyInput) {
   let input = qtyInput.target;
@@ -156,3 +135,19 @@ checkoutBtn.addEventListener("click", checkout);
 function checkout() {
   location.href = "checkout.html";
 }
+
+// Flytta denna kod till details.ts?
+// function addToCart(productToAdd: Product) {
+//   for (let i = 0; i < cart.length; i++) {
+//     if (cart[i].product.name === productToAdd.name) {
+//       cart[i].qty += 1;
+//       return;
+//     }
+//     let item: Item = {
+//       product: productToAdd,
+//       qty: 1,
+//     };
+//     cart.push(item);
+//   }
+//   saveInLocalStorage();
+// }
