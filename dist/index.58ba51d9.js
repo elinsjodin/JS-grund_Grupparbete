@@ -498,8 +498,10 @@ function myNavBar() {
     cartButton.className = "cart-button";
     cartButton.innerHTML = "<i class='bi bi-bag'></i>";
     cartButton.addEventListener("click", ()=>{
-        location.href = "pages/cart.html";
+        location.href = "cart.html";
     });
+    let cartCounter = document.getElementById("cart-count");
+    //   navBarContainer.appendChild(cartCounter); // Detta skriver över loggan
     navBarContainer.appendChild(cartButton);
 }
 
