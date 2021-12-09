@@ -3,6 +3,7 @@ import { myNavBar } from "./functions/navbar"
 import { Product } from "./models/products";
 
 import perfumeimage from "./../components/perfumebottle.jpg";
+import { localStorageKey } from "./functions/localStorage";
 
 window.onload = function () {
   start();
@@ -77,6 +78,7 @@ function start() {
 }
 
 function render() {
+  
   let productDiv: HTMLDivElement = document.getElementById(
     "product-div"
   ) as HTMLDivElement;
