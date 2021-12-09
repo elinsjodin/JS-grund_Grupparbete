@@ -4,9 +4,12 @@ import { Product } from "./models/products";
 
 import perfumeimage from "./../components/perfumebottle.jpg";
 
+import { footer } from "./functions/footer";
+
 window.onload = function () {
   start();
   myNavBar();
+  footer();
 };
 
 let pr1: Product = new Product(
