@@ -1,14 +1,8 @@
 export class Detail {
-  img: HTMLImageElement;
   desc: string;
   ing: string;
 
-  constructor(
-    img: HTMLImageElement,
-    desc: string,
-    ing: string
-    ) {
-    this.img = img;
+  constructor(desc: string, ing: string) {
     this.desc = desc;
     this.ing = ing;
   }

@@ -1,92 +1,18 @@
 import { myNavBar } from "./functions/navbar";
-import { Product } from "./models/products";
-import perfumeimage from "./../components/perfumebottle.jpg";
 import { listOfItemsInDetails } from "./functions/detailsList";
-import { detailsList } from "./functions/localStorage";
-
 import { footer } from "./functions/footer";
+import { products } from "./functions/productList";
+import { productList } from "./functions/localStorage";
 
 window.onload = function () {
-  start();
   myNavBar();
   listOfItemsInDetails();
+  products();
+  start();
   footer();
-  for (let i = 0; i < detailsList.length; i++) {
-    let detailsListIndex = detailsList[i];
-
-    console.log(detailsListIndex);
-  }
 };
 
-let pr1: Product = new Product(
-  perfumeimage,
-  "No.1" + " " + "Musk",
-  1050 + parseInt(":-"),
-  "1"
-);
-let pr2: Product = new Product(
-  perfumeimage,
-  "No.2" + " " + "Vanilla",
-  1050 + parseInt(":-"),
-  "2"
-);
-let pr3: Product = new Product(
-  perfumeimage,
-  "No.3" + " " + "Sandalwood",
-  1050 + parseInt(":-"),
-  "3"
-);
-let pr4: Product = new Product(
-  perfumeimage,
-  "No.4" + " " + "Citrus Noir",
-  1050 + parseInt(":-"),
-  "4"
-);
-let pr5: Product = new Product(
-  perfumeimage,
-  "No.5" + " " + "Oud",
-  1050 + parseInt(":-"),
-  "5"
-);
-let pr6: Product = new Product(
-  perfumeimage,
-  "No.6" + " " + "Amber",
-  1050 + parseInt(":-"),
-  "6"
-);
-let pr7: Product = new Product(
-  perfumeimage,
-  "No.7" + " " + "Bergamot",
-  1050 + parseInt(":-"),
-  "7"
-);
-let pr8: Product = new Product(
-  perfumeimage,
-  "No.8" + " " + "Orange Basil",
-  1050 + parseInt(":-"),
-  "8"
-);
-let pr9: Product = new Product(
-  perfumeimage,
-  "No.9" + " " + "Ylang-Ylang",
-  1050 + parseInt(":-"),
-  "9"
-);
-let pr10: Product = new Product(
-  perfumeimage,
-  "No.10" + " " + "Geranium",
-  1050 + parseInt(":-"),
-  "10"
-);
-pr1.details = detailsList[0];
-
-let productList = [pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10];
-
 function start() {
-  render();
-}
-
-function render() {
   let productDiv: HTMLDivElement = document.getElementById(
     "product-div"
   ) as HTMLDivElement;
@@ -99,7 +25,7 @@ function render() {
 
     let price: HTMLParagraphElement = document.createElement("p");
     price.id = "price";
-    price.innerHTML = productList[i].price.toString();
+    price.innerHTML = productList[i].price + ":-".toString();
 
     let detailsLink: HTMLParagraphElement = document.createElement("p");
     detailsLink.id = "detailsLink";

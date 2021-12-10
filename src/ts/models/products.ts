@@ -5,12 +5,19 @@ export class Product {
   name: string;
   price: number;
   id?: string;
-  details: Detail;
+  detail: Detail;
 
-  constructor(img: string, name: string, price: number, viewPr: string) {
+  constructor(
+    img: string,
+    name: string,
+    price: number,
+    viewPr: string,
+    details: Detail
+  ) {
     this.img = img;
     this.name = name;
     this.price = price;
     this.id = viewPr;
+    this.detail = details;
   }
 }
