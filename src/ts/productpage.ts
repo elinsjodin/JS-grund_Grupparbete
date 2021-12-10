@@ -78,6 +78,7 @@ let pr10: Product = new Product(
   1050 + parseInt(":-"),
   "10"
 );
+pr1.details = detailsList[0];
 
 let productList = [pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10];
 

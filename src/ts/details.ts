@@ -4,6 +4,11 @@ import { cartList, localStorageKey } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
 import { cartCount } from "./functions/cartCount";
 import { Detail } from "./models/details";
+import { Cart } from "./models/cart";
+import { Product } from "./models/products";
+
+let cart = new Cart();
+let currentProduct: Product;
 
 window.onload = function () {
   myNavBar();
@@ -26,6 +31,6 @@ function handleAddToCart() {
 
 function pushToCart(e) {
   e.preventDefault();
-  cartList.push();
+  cart.addToCart(currentProduct);
   cartCount();
 }
