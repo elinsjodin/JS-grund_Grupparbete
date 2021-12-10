@@ -1,14 +1,16 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
-import { cartList } from "./functions/localStorage";
+import { cartList, localStorageKey } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
+import { cartCount } from "./functions/cartCount";
+import { Detail } from "./models/details";
 
-window.onload = function(){
-    myNavBar();
-    handleAddToCart();
-    listOfItemsInDetails();
-    footer();
-}
+window.onload = function () {
+  myNavBar();
+  handleAddToCart();
+  listOfItemsInDetails();
+  footer();
+};
 
 function handleAddToCart() {
   let addToCartBtn: HTMLButtonElement = document.createElement("button");
@@ -22,4 +24,5 @@ function handleAddToCart() {
 function pushToCart(e) {
   e.preventDefault();
   cartList.push();
+  cartCount();
 }
