@@ -66,7 +66,7 @@ function renderProductsInCart() {
   saveInLocalStorage();
 }
 
-let checkoutBtn = document.getElementById(
+let checkoutBtn: HTMLButtonElement = document.getElementById(
   "checkout-button"
 ) as HTMLButtonElement;
 checkoutBtn.addEventListener("click", checkout);
