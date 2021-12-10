@@ -1,14 +1,14 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
-import { cartList } from "./functions/localStorage";
+import { cartList, localStorageKey } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
 
-window.onload = function(){
-    myNavBar();
-    handleAddToCart();
-    listOfItemsInDetails();
-    footer();
-}
+window.onload = function () {
+  myNavBar();
+  handleAddToCart();
+  listOfItemsInDetails();
+  footer();
+};
 
 function handleAddToCart() {
   let addToCartBtn: HTMLButtonElement = document.createElement("button");
