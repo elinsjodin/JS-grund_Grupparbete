@@ -1,4 +1,4 @@
-describe("Test form inputs and validation", () => {
+describe("Test for form inputs and validation", () => {
   it("should test form input fields", () => {
     cy.visit("/pages/checkout.html");
     cy.get("#country-select").select("Sweden");
