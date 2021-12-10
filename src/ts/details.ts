@@ -5,6 +5,9 @@ import { Detail } from "./models/details";
 window.onload = function () {
   myNavBar();
   handleAddToCart();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  let productId = urlParams.get("id");
 };
 
 function handleAddToCart() {
