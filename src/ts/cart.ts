@@ -11,9 +11,9 @@ window.onload = function () {
   renderProductsInCart();
 };
 
-function saveInLocalStorage() {
-  localStorage.setItem(localStorageKey, JSON.stringify(Item));
-}
+// function saveInLocalStorage() {
+//   localStorage.setItem(localStorageKey, JSON.stringify(Item));
+// }
 
 let cart = cartList;
 
@@ -69,63 +69,58 @@ function renderProductsInCart() {
   saveInLocalStorage();
 }
 
-function decrementCart(qtyInput) {
-  let valueCount: number = qtyInput.value;
+// function decrementCart(qtyInput) {
+//   let valueCount: number = qtyInput.value;
 
-  valueCount--;
+//   valueCount--;
 
-  qtyInput.value = valueCount;
+//   qtyInput.value = valueCount;
 
-  saveInLocalStorage();
-}
+//   saveInLocalStorage();
+// }
 
-function incrementCart(qtyInput) {
-  let valueCount: number = qtyInput.value;
+// function incrementCart(qtyInput) {
+//   let valueCount: number = qtyInput.value;
 
-  valueCount++;
+//   valueCount++;
 
-  qtyInput.value = valueCount;
+//   qtyInput.value = valueCount;
 
-  saveInLocalStorage();
-}
+//   saveInLocalStorage();
+// }
 
-function removeItemFromCart(productToRemove: Product) {
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i].product.name === productToRemove.name) {
-      cart.splice(i, 1);
-    }
-  }
-  updateCartTotal();
-  saveInLocalStorage();
-}
+// function removeItemFromCart(productToRemove: Product) {
+//   for (let i = 0; i < cart.length; i++) {
+//     if (cart[i].product.name === productToRemove.name) {
+//       cart.splice(i, 1);
+//     }
+//   }
+//   updateCartTotal();
+//   saveInLocalStorage();
+// }
 
-export function quantityChanged(qtyInput) {
-  let input = qtyInput.target;
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1;
-  }
-  updateCartTotal(qtyInput);
-  saveInLocalStorage();
-}
+// function quantityChanged(qtyInput) {
+//   let input = qtyInput.target;
+//   if (isNaN(input.value) || input.value <= 0) {
+//     input.value = 1;
+//   }
+//   updateCartTotal();
+//   saveInLocalStorage();
+// }
 
-export function updateCartTotal(qtyInput: number) {
-  let total: number = 0;
-  for (let i = 0; i < cart.length; i++) {
-    let priceElement: HTMLSpanElement = document.getElementById(
-      "cart-item-price"
-    ) as HTMLSpanElement;
-    let quantityElement = qtyInput;
-    let price = parseFloat(priceElement.innerText.replace("", ":-"));
-    let quantity = quantityElement;
-    total = total + price * quantity;
-  }
-  total = Math.round(total * 100) / 100;
-  let totalCartPrice: HTMLSpanElement = document.getElementById(
-    "total-cart-price"
-  ) as HTMLDivElement;
-  totalCartPrice.innerText = total + ":-";
-  saveInLocalStorage();
-}
+// function updateCartTotal() {
+//   let total: number = 0;
+//   for (let i = 0; i < cart.length; i++) {
+//     total = total + cart[i].product.price * cart[i].qty;
+//   }
+
+//   total = Math.round(total * 100) / 100;
+//   let totalCartPrice: HTMLSpanElement = document.getElementById(
+//     "total-cart-price"
+//   ) as HTMLDivElement;
+//   totalCartPrice.innerText = total + ":-";
+//   saveInLocalStorage();
+// }
 
 let checkoutBtn = document.getElementById(
   "checkout-button"

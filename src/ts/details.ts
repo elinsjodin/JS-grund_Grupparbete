@@ -10,6 +10,9 @@ window.onload = function () {
   handleAddToCart();
   listOfItemsInDetails();
   footer();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  let productId = urlParams.get("id");
 };
 
 function handleAddToCart() {
