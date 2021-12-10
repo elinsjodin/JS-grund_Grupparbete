@@ -19,6 +19,8 @@ export class Cart {
     valueCount--;
 
     qtyInput.value = valueCount;
+    this.updateCartTotal();
+    this.saveInLocalStorage();
   }
 
   incrementCart(qtyInput) {
@@ -27,6 +29,8 @@ export class Cart {
     valueCount++;
 
     qtyInput.value = valueCount;
+    this.updateCartTotal();
+    this.saveInLocalStorage();
   }
 
   removeItemFromCart(productToRemove: Product) {
@@ -35,6 +39,8 @@ export class Cart {
         this.items.splice(i, 1);
       }
     }
+    this.updateCartTotal();
+    this.saveInLocalStorage();
   }
 
   quantityChanged(qtyInput) {
@@ -42,6 +48,8 @@ export class Cart {
     if (isNaN(input.value) || input.value <= 0) {
       input.value = 1;
     }
+    this.updateCartTotal();
+    this.saveInLocalStorage();
   }
 
   updateCartTotal(): number {
@@ -51,6 +59,7 @@ export class Cart {
     }
     total = Math.round(total * 100) / 100;
     return total;
+    this.saveInLocalStorage();
     // let totalCartPrice: HTMLSpanElement = document.getElementById(
     //   "total-cart-price"
     // ) as HTMLDivElement;

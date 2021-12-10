@@ -15,10 +15,18 @@ window.onload = function () {
   handleAddToCart();
   listOfItemsInDetails();
   footer();
-
-  const urlParams = new URLSearchParams(window.location.search);
-  let productId = urlParams.get("id");
 };
+
+let urlParams = new URLSearchParams(window.location.search);
+let productId = urlParams.get("id");
+
+function renderDetailsPage() {
+  for(let i = 0; i < productList.length; i++){
+    if( productId == productList[i].id){
+      
+    }
+  }
+
 
 function handleAddToCart() {
   let addToCartBtn: HTMLButtonElement = document.createElement("button");
@@ -33,4 +41,8 @@ function pushToCart(e) {
   e.preventDefault();
   cart.addToCart(currentProduct);
   cartCount();
+
+  for (let i = 0; i < cart.items.length; i++) {
+    cart.items[i];
+  }
 }
