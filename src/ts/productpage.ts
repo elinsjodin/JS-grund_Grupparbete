@@ -1,15 +1,22 @@
-import { myNavBar } from "./functions/navbar";
-
+import { myNavBar } from "./functions/navbar" 
 import { Product } from "./models/products";
-
 import perfumeimage from "./../components/perfumebottle.jpg";
+import { listOfItemsInDetails } from "./functions/detailsList";
+import { detailsList } from "./functions/localStorage";
 
 import { footer } from "./functions/footer";
 
 window.onload = function () {
   start();
   myNavBar();
+  listOfItemsInDetails();
   footer();
+  for (let i = 0; i < detailsList.length; i++) {
+    let detailsListIndex = detailsList[i];
+
+    console.log(detailsListIndex);
+    
+  }
 };
 
 let pr1: Product = new Product(
@@ -116,5 +123,5 @@ function render() {
 }
 
 function redirect(productId: string) {
-  location.href = "pages/details.html?id=" + productId;
+  location.href = "details.html?id=" + productId;
 }

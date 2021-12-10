@@ -1,16 +1,14 @@
-import { cartList, localStorageKey } from "./functions/localStorage";
-
+import { listOfItemsInDetails } from "./functions/detailsList";
+import { footer } from "./functions/footer";
+import { cartList } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
 
-import { Detail } from "./models/details";
-
-import { footer } from "./functions/footer";
-
-window.onload = function () {
-  myNavBar();
-  footer();
-  handleAddToCart();
-};
+window.onload = function(){
+    myNavBar();
+    handleAddToCart();
+    listOfItemsInDetails();
+    footer();
+}
 
 function handleAddToCart() {
   let addToCartBtn: HTMLButtonElement = document.createElement("button");

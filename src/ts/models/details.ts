@@ -8,8 +8,8 @@ export class Detail {
     desc: string,
     ing: string
     ) {
-    this.img;
-    this.desc = "";
-    this.ing = "Ingredients:" + " " + "Alcohol, Aqua, Parfume (fragrance).";
+    this.img = img;
+    this.desc = desc;
+    this.ing = ing;
   }
 }
