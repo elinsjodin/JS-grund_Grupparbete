@@ -137,17 +137,17 @@ function checkout() {
 }
 
 // Flytta denna kod till details.ts?
-// function addToCart(productToAdd: Product) {
-//   for (let i = 0; i < cart.length; i++) {
-//     if (cart[i].product.name === productToAdd.name) {
-//       cart[i].qty += 1;
-//       return;
-//     }
-//     let item: Item = {
-//       product: productToAdd,
-//       qty: 1,
-//     };
-//     cart.push(item);
-//   }
-//   saveInLocalStorage();
-// }
+export function addToCart(productToAdd: Product) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].product.name === productToAdd.name) {
+      cart[i].qty += 1;
+      return;
+    }
+    let item: Item = {
+      product: productToAdd,
+      qty: 1,
+    };
+    cart.push(item);
+  }
+  saveInLocalStorage();
+}
