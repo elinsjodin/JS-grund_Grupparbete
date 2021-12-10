@@ -6,14 +6,12 @@ import { Item } from "./models/item";
 
 import { cartList, localStorageKey } from "./functions/localStorage";
 
+import { Cart } from "./models/cart";
+
 window.onload = function () {
   myNavBar();
   renderProductsInCart();
 };
-
-// function saveInLocalStorage() {
-//   localStorage.setItem(localStorageKey, JSON.stringify(Item));
-// }
 
 let cart = cartList;
 
@@ -66,61 +64,7 @@ function renderProductsInCart() {
     );
     cartRows.appendChild(deleteBtn);
   }
-  saveInLocalStorage();
 }
-
-// function decrementCart(qtyInput) {
-//   let valueCount: number = qtyInput.value;
-
-//   valueCount--;
-
-//   qtyInput.value = valueCount;
-
-//   saveInLocalStorage();
-// }
-
-// function incrementCart(qtyInput) {
-//   let valueCount: number = qtyInput.value;
-
-//   valueCount++;
-
-//   qtyInput.value = valueCount;
-
-//   saveInLocalStorage();
-// }
-
-// function removeItemFromCart(productToRemove: Product) {
-//   for (let i = 0; i < cart.length; i++) {
-//     if (cart[i].product.name === productToRemove.name) {
-//       cart.splice(i, 1);
-//     }
-//   }
-//   updateCartTotal();
-//   saveInLocalStorage();
-// }
-
-// function quantityChanged(qtyInput) {
-//   let input = qtyInput.target;
-//   if (isNaN(input.value) || input.value <= 0) {
-//     input.value = 1;
-//   }
-//   updateCartTotal();
-//   saveInLocalStorage();
-// }
-
-// function updateCartTotal() {
-//   let total: number = 0;
-//   for (let i = 0; i < cart.length; i++) {
-//     total = total + cart[i].product.price * cart[i].qty;
-//   }
-
-//   total = Math.round(total * 100) / 100;
-//   let totalCartPrice: HTMLSpanElement = document.getElementById(
-//     "total-cart-price"
-//   ) as HTMLDivElement;
-//   totalCartPrice.innerText = total + ":-";
-//   saveInLocalStorage();
-// }
 
 let checkoutBtn = document.getElementById(
   "checkout-button"
@@ -132,17 +76,4 @@ function checkout() {
 }
 
 // Flytta denna kod till details.ts?
-export function addToCart(productToAdd: Product) {
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i].product.name === productToAdd.name) {
-      cart[i].qty += 1;
-      return;
-    }
-    let item: Item = {
-      product: productToAdd,
-      qty: 1,
-    };
-    cart.push(item);
-  }
-  saveInLocalStorage();
-}
+// export function
