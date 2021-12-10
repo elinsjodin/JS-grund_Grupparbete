@@ -99,7 +99,7 @@ function removeItemFromCart(productToRemove: Product) {
   saveInLocalStorage();
 }
 
-function quantityChanged(qtyInput) {
+export function quantityChanged(qtyInput) {
   let input = qtyInput.target;
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
@@ -108,7 +108,7 @@ function quantityChanged(qtyInput) {
   saveInLocalStorage();
 }
 
-function updateCartTotal(qtyInput: number) {
+export function updateCartTotal(qtyInput: number) {
   let total: number = 0;
   for (let i = 0; i < cart.length; i++) {
     let priceElement: HTMLSpanElement = document.getElementById(
