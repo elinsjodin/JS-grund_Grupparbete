@@ -30,15 +30,24 @@ export function myNavBar() {
   });
 
   // LOGO
+  let navBarLogo: HTMLHeadingElement = document.createElement("h3");
+  navBarLogo.className = "navbar-logo";
+  navBarLogo.innerText = "NLP";
+
+  navBarContainer.appendChild(navBarLogo);
 
   // CARTBUTTON
   let cartButton: HTMLButtonElement = document.createElement("button");
-
   cartButton.setAttribute("type", "button");
   cartButton.className = "cart-button";
   cartButton.innerHTML = "<i class='bi bi-bag'></i>";
   cartButton.addEventListener("click", () => {
-    location.href = "cart.html";
+      if(window.location.href === "http://localhost:1234/pages/cart.html"){
+          return false;
+        }
+        else{
+            location.href = "cart.html";
+        }
   });
 
   let cartCounter: HTMLSpanElement = document.getElementById(
