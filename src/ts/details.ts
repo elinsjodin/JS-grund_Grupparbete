@@ -1,10 +1,12 @@
-import { cartList, localStorageKey } from "./functions/localStorage";
+import { cartList, detailsList, localStorageKey } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar"
+import { listOfItemsInDetails } from "./functions/detailsList";
 import { Detail } from "./models/details";
 
 window.onload = function(){
     myNavBar();
     handleAddToCart();
+    listOfItemsInDetails();
 }
 
 function handleAddToCart(){
