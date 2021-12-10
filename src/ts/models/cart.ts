@@ -44,16 +44,17 @@ export class Cart {
     }
   }
 
-  updateCartTotal() {
+  updateCartTotal(): number {
     let total: number = 0;
     for (let i = 0; i < this.items.length; i++) {
       total = total + this.items[i].product.price * this.items[i].qty;
     }
     total = Math.round(total * 100) / 100;
-    let totalCartPrice: HTMLSpanElement = document.getElementById(
-      "total-cart-price"
-    ) as HTMLDivElement;
-    totalCartPrice.innerText = total + ":-";
+    return total;
+    // let totalCartPrice: HTMLSpanElement = document.getElementById(
+    //   "total-cart-price"
+    // ) as HTMLDivElement;
+    // totalCartPrice.innerText = total + ":-";
   }
   addToCart(productToAdd: Product) {
     for (let i = 0; i < this.items.length; i++) {
