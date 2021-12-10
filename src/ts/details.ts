@@ -2,6 +2,8 @@ import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
 import { cartList, localStorageKey } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
+import { cartCount } from "./functions/cartCount";
+import { Detail } from "./models/details";
 
 window.onload = function () {
   myNavBar();
@@ -22,4 +24,5 @@ function handleAddToCart() {
 function pushToCart(e) {
   e.preventDefault();
   cartList.push();
+  cartCount();
 }
