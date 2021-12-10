@@ -1,5 +1,8 @@
-import { myNavBar } from "./functions/navbar"
+import { myNavBar } from "./functions/navbar";
 
-window.onload = function(){
-    myNavBar();
-}
+import { footer } from "./functions/footer";
+
+window.onload = function () {
+  myNavBar();
+  footer();
+};

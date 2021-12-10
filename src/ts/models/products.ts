@@ -2,7 +2,7 @@ export class Product {
   img: string;
   name: string;
   price: number | string;
-  id: string;
+  id?: string;
 
   constructor(
     img: string,

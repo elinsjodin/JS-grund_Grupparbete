@@ -4,10 +4,13 @@ import perfumeimage from "./../components/perfumebottle.jpg";
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { detailsList } from "./functions/localStorage";
 
+import { footer } from "./functions/footer";
+
 window.onload = function () {
   start();
   myNavBar();
   listOfItemsInDetails();
+  footer();
   for (let i = 0; i < detailsList.length; i++) {
     let detailsListIndex = detailsList[i];
 

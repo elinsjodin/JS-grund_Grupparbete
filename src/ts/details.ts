@@ -1,24 +1,25 @@
-import { cartList, detailsList, localStorageKey } from "./functions/localStorage";
-import { myNavBar } from "./functions/navbar"
 import { listOfItemsInDetails } from "./functions/detailsList";
-import { Detail } from "./models/details";
+import { footer } from "./functions/footer";
+import { cartList } from "./functions/localStorage";
+import { myNavBar } from "./functions/navbar";
 
 window.onload = function(){
     myNavBar();
     handleAddToCart();
     listOfItemsInDetails();
+    footer();
 }
 
-function handleAddToCart(){
-    let addToCartBtn: HTMLButtonElement = document.createElement("button");
-    addToCartBtn.setAttribute("type", "button");
-    addToCartBtn.id = "add-to-cart-btn";
-    addToCartBtn.innerText = "Add to Cart";
-    addToCartBtn.addEventListener("click", pushToCart);
-    document.body.appendChild(addToCartBtn);
+function handleAddToCart() {
+  let addToCartBtn: HTMLButtonElement = document.createElement("button");
+  addToCartBtn.setAttribute("type", "button");
+  addToCartBtn.id = "add-to-cart-btn";
+  addToCartBtn.innerText = "Add to Cart";
+  addToCartBtn.addEventListener("click", pushToCart);
+  document.body.appendChild(addToCartBtn);
 }
 
-function pushToCart(e){
-    e.preventDefault();
-    cartList.push();
+function pushToCart(e) {
+  e.preventDefault();
+  cartList.push();
 }
