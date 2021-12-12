@@ -1,3 +1,5 @@
+import { cartDropDown } from "./cartModal";
+
 export function myNavBar() {
   let navBarContainer: HTMLElement = document.getElementById(
     "nav-container"
@@ -40,20 +42,25 @@ export function myNavBar() {
   let cartButton: HTMLButtonElement = document.createElement("button");
   cartButton.setAttribute("type", "button");
   cartButton.className = "cart-button";
-  cartButton.innerHTML = "<i class='bi bi-bag'></i>";
-  cartButton.addEventListener("click", () => {
-      if(window.location.href === "http://localhost:1234/pages/cart.html"){
-          return false;
-        }
-        else{
-            location.href = "cart.html";
-        }
-  });
+  cartButton.addEventListener("click", cartDropDown);
+  // cartButton.addEventListener("click", () => {
+  //   if (window.location.href === "http://localhost:1234/pages/cart.html") {
+  //     return false;
+  //   } else {
+  //     location.href = "cart.html";
+  //   }
+  //});
 
-  let cartCounter: HTMLSpanElement = document.getElementById(
-    "cart-count"
-  ) as HTMLSpanElement;
+  let cartLogo: HTMLAnchorElement = document.createElement("a");
+  cartLogo.className = "cart-logo";
+  cartLogo.innerHTML = "<i class='bi bi-bag'></i>";
 
-  //   navBarContainer.appendChild(cartCounter); // Detta skriver över loggan
+  cartButton.appendChild(cartLogo);
+
+  let cartCounter: HTMLSpanElement = document.createElement("span");
+  cartCounter.className = "cart-count";
+
+  cartButton.appendChild(cartCounter);
+
   navBarContainer.appendChild(cartButton);
 }
