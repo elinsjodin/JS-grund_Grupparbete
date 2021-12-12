@@ -74,6 +74,7 @@ checkoutBtn.addEventListener("click", checkout);
 function checkout() {
   location.href = "checkout.html";
 }
-
-// Flytta denna kod till details.ts?
-// export function
+// let totalCartPrice: HTMLSpanElement = document.getElementById(
+//   "total-cart-price"
+// ) as HTMLDivElement;
+// totalCartPrice.innerText = total + ":-";
