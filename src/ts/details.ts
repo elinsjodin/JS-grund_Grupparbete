@@ -21,28 +21,27 @@ let urlParams = new URLSearchParams(window.location.search);
 let productId = urlParams.get("id");
 
 function renderDetailsPage() {
-  for(let i = 0; i < productList.length; i++){
-    if( productId == productList[i].id){
-      
+  for (let i = 0; i < this.productList.length; i++) {
+    if (productId == this.productList[i].id) {
     }
   }
 
+  function handleAddToCart() {
+    let addToCartBtn: HTMLButtonElement = document.createElement("button");
+    addToCartBtn.setAttribute("type", "button");
+    addToCartBtn.id = "add-to-cart-btn";
+    addToCartBtn.innerText = "Add to Cart";
+    addToCartBtn.addEventListener("click", pushToCart);
+    document.body.appendChild(addToCartBtn);
+  }
 
-function handleAddToCart() {
-  let addToCartBtn: HTMLButtonElement = document.createElement("button");
-  addToCartBtn.setAttribute("type", "button");
-  addToCartBtn.id = "add-to-cart-btn";
-  addToCartBtn.innerText = "Add to Cart";
-  addToCartBtn.addEventListener("click", pushToCart);
-  document.body.appendChild(addToCartBtn);
-}
+  function pushToCart(e) {
+    e.preventDefault();
+    cart.addToCart(currentProduct);
+    cartCount();
 
-function pushToCart(e) {
-  e.preventDefault();
-  cart.addToCart(currentProduct);
-  cartCount();
-
-  for (let i = 0; i < cart.items.length; i++) {
-    cart.items[i];
+    for (let i = 0; i < cart.items.length; i++) {
+      cart.items[i];
+    }
   }
 }
