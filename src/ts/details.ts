@@ -22,10 +22,9 @@ window.onload = function () {
   footer();
 };
 
-console.log(productList);
-
-let productsInList = JSON.parse(localStorage.getItem("Product list"));
-productList = JSON.parse("Product list");
+let productsInList = localStorage.getItem("Product list");
+let productDetails = JSON.parse(productsInList);
+console.log(productDetails);
 
 let productDetailsDiv: HTMLDivElement = document.getElementById(
   "product-details-container"
@@ -35,28 +34,28 @@ let urlParams = new URLSearchParams(window.location.search);
 let productId = urlParams.get("id");
 
 export function goToDetailsPage() {
-  for (let i = 0; i < productList.length; i++) {
-    if (productId == productList[i].id) {
+  for (let i = 0; i < productDetails.length; i++) {
+    if (productId == productDetails[i].id) {
       let productImg: HTMLImageElement = document.createElement("img");
       productImg.id = "productImg";
       productImg.alt = "Perfumebottle";
-      productImg.src = productList[i].img;
+      productImg.src = productDetails[i].img;
 
       let prodctPrice: HTMLParagraphElement = document.createElement("p");
       prodctPrice.className = "price";
-      prodctPrice.innerHTML = productList[i].price + ":-".toString();
+      prodctPrice.innerHTML = productDetails[i].price + ":-".toString();
 
       let productName: HTMLHeadElement = document.createElement("h2");
       productName.className = "productName";
-      productName.innerHTML = productList[i].name;
+      productName.innerHTML = productDetails[i].name;
 
       let productDesc: HTMLSpanElement = document.createElement("span");
       productDesc.className = "product-desc";
-      productDesc.innerHTML = productList[i].detail.desc;
+      productDesc.innerHTML = productDetails[i].detail.desc;
 
       let productIng: HTMLSpanElement = document.createElement("span");
       productIng.className = "product-ing";
-      productIng.innerHTML = productList[i].detail.ing;
+      productIng.innerHTML = productDetails[i].detail.ing;
 
       productDetailsDiv.appendChild(productImg);
       productDetailsDiv.appendChild(prodctPrice);
