@@ -1,8 +1,8 @@
-import { cartList } from "../functions/localStorage";
+import { cartList, localStorageKey } from "../functions/localStorage";
 
 export function cartDropDown() {
-  let cartDropDown: HTMLDivElement = document.createElement("div");
-  cartDropDown.id = "cart-dropdown-container";
+  let cartDropDownContainer: HTMLDivElement = document.createElement("div");
+  cartDropDownContainer.id = "cart-dropdown-container";
 
   let shoppingCart: HTMLDivElement = document.createElement("div");
   shoppingCart.className = "shopping-cart";
@@ -16,8 +16,8 @@ export function cartDropDown() {
 
   let shoppingCartCount: HTMLSpanElement = document.createElement("span");
   shoppingCartCount.className = "shopping-cart-count";
-  shoppingCartCount.innerHTML = count.toString();
-  shoppingCartCount.addEventListener("change", cartCount);
+  shoppingCartCount.innerHTML = counter.toString(); //Skapa funtion
+  shoppingCartCount.addEventListener("change", cartCounter); //Skapa funktion
 
   let shoppingCartTotal: HTMLSpanElement = document.createElement("span");
   shoppingCartTotal.className = "shopping-cart-total";
@@ -27,55 +27,61 @@ export function cartDropDown() {
   shoppingCartItems.className = "shopping-cart-items";
   shoppingCartItems.innerHTML = "";
 
-  for (let i = 0; i < cartList.length; i++) {
-    let cartLi: HTMLLIElement = document.createElement("li");
-    let itemProperties = cartList[i];
+  let cartItems = cartList;
 
-    let liSpan = document.createElement("span");
-    liSpan.innerHTML = itemProperties.toString(); //??
-    cartLi.appendChild(liSpan);
+  for (let i = 0; i < cartItems.length; i++) {
+    let cartLi: HTMLLIElement = document.createElement("li");
+    let itemImg = cartItems[i].product.img;
+    let itemTitel = cartItems[i].product.name;
+    let cartTotal = cartItems[i].product.price;
+    let cartCount = cartItems[i].qty;
+
+    let liImg = document.createElement("span");
+    liImg.innerHTML = itemImg.toString();
+    cartLi.appendChild(liImg);
+
+    let liTitel = document.createElement("span");
+    liTitel.innerHTML = itemTitel.toString();
+    cartLi.appendChild(liTitel);
+
+    let liPrice = document.createElement("span");
+    liPrice.innerHTML = cartTotal.toString();
+    cartLi.appendChild(liPrice);
+
+    let licartCount = document.createElement("span");
+    licartCount.innerHTML = cartCount.toString();
+    cartLi.appendChild(licartCount);
 
     shoppingCartItems.appendChild(cartLi);
   }
+  let viewCartButton: HTMLButtonElement = document.createElement("button");
+  viewCartButton.className = "view-cart-button";
+  viewCartButton.innerText = "View Cart";
+  viewCartButton.addEventListener("click", () => {
+    if (window.location.href === "http://localhost:1234/pages/cart.html") {
+      return false;
+    } else {
+      location.href = "cart.html";
+    }
+  });
   let shoppingCartCheckoutButton: HTMLButtonElement =
     document.createElement("button");
   shoppingCartCheckoutButton.className = "shopping-cart-checkout-button";
   shoppingCartCheckoutButton.innerText = "Checkout";
   shoppingCartCheckoutButton.addEventListener("click", () => {
-    location.href = "checkout.html";
+    if (window.location.href === "http://localhost:1234/pages/checkout.html") {
+      return false;
+    } else {
+      location.href = "checkout.html";
+    }
   });
 
-  cartDropDown.appendChild(shoppingCart);
+  cartDropDownContainer.appendChild(shoppingCart);
   shoppingCart.appendChild(shoppingCartHeader);
   shoppingCartHeader.appendChild(shoppingCartLogo);
   shoppingCartHeader.appendChild(shoppingCartCount);
   shoppingCartHeader.appendChild(shoppingCartTotal);
   shoppingCart.appendChild(shoppingCartItems);
+  shoppingCart.appendChild(viewCartButton);
   shoppingCart.appendChild(shoppingCartCheckoutButton);
-
-  $(".cart-button").on("click", function () {
-    $(".cart-dropdown-container").fadeToggle("fast");
-  });
 }
-
-//   let cartLi: HTMLLIElement = document.createElement("li");
-//   cartLi.className = "cart-list-item";
-
-//   let cartItemImg: HTMLImageElement = document.createElement("img");
-//   cartItemImg.className = "cart-item-img";
-
-//   let cartItemName: HTMLImageElement = document.createElement("img");
-//   cartItemName.className = "cart-item-name";
-
-//   let cartItemPrice: HTMLImageElement = document.createElement("img");
-//   cartItemPrice.className = "cart-item-price";
-
-//   let cartItemQty: HTMLImageElement = document.createElement("img");
-//   cartItemQty.className = "cart-item-qty";
-//   cartItemQty.innerText = "Quantity:";
-
-//   shoppingCartItems.appendChild(cartLi);
-//   cartLi.appendChild(cartItemImg);
-//   cartLi.appendChild(cartItemName);
-//   cartLi.appendChild(cartItemPrice);
-//   cartLi.appendChild(cartItemQty);

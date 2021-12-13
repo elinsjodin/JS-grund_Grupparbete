@@ -3,6 +3,7 @@ import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
 import { products } from "./functions/productList";
 import { productList } from "./functions/localStorage";
+import { cartDropDown } from "./functions/cartModal";
 
 window.onload = function () {
   myNavBar();
@@ -10,6 +11,7 @@ window.onload = function () {
   products();
   start();
   footer();
+  cartDropDown();
 };
 
 function start() {
