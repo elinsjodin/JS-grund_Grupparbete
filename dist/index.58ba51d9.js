@@ -460,11 +460,13 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"7BLcd":[function(require,module,exports) {
 var _navbar = require("./functions/navbar");
+var _footer = require("./functions/footer");
 window.onload = function() {
     _navbar.myNavBar();
+    _footer.footer();
 };
 
-},{"./functions/navbar":"fUsK1"}],"fUsK1":[function(require,module,exports) {
+},{"./functions/navbar":"fUsK1","./functions/footer":"3hGNG"}],"fUsK1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "myNavBar", ()=>myNavBar
@@ -540,6 +542,33 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["e4k7L","7BLcd"], "7BLcd", "parcelRequire9be1")
+},{}],"3hGNG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "footer", ()=>footer1
+);
+function footer1() {
+    let footerContainer = document.getElementById("footer-container");
+    let footer = document.createElement("div");
+    let contact = document.createElement("p");
+    contact.id = "contact";
+    contact.innerText = "Contact";
+    let faq = document.createElement("p");
+    faq.id = "FAQ";
+    faq.innerText = "FAQ";
+    let philosphy = document.createElement("p");
+    philosphy.id = "philosphy";
+    philosphy.innerText = "Brand Philosphy";
+    let brand = document.createElement("p");
+    brand.id = "brand";
+    brand.innerHTML = "&#169;NLP";
+    footer.appendChild(contact);
+    footer.appendChild(faq);
+    footer.appendChild(philosphy);
+    footer.appendChild(brand);
+    footerContainer.appendChild(footer);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["e4k7L","7BLcd"], "7BLcd", "parcelRequire9be1")
 
 //# sourceMappingURL=index.58ba51d9.js.map

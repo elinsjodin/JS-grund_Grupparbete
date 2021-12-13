@@ -3,6 +3,7 @@ import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
 import { products } from "./functions/productList";
 import { productList } from "./functions/localStorage";
+import { goToDetailsPage } from "./details";
 
 window.onload = function () {
   myNavBar();
@@ -50,4 +51,5 @@ function start() {
 
 function redirect(productId: string) {
   location.href = "details.html?id=" + productId;
+  goToDetailsPage();
 }
