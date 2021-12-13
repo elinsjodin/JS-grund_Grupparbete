@@ -58,11 +58,18 @@ export function goToDetailsPage() {
       productIng.className = "product-ing";
       productIng.innerHTML = productList[i].detail.ing;
 
+      let addToCartBtn: HTMLButtonElement = document.createElement("button");
+      addToCartBtn.setAttribute("type", "button");
+      addToCartBtn.id = "add-to-cart-btn";
+      addToCartBtn.innerText = "Add to Cart";
+      addToCartBtn.addEventListener("click", pushToCart);
+
       productDetailsDiv.appendChild(productImg);
       productDetailsDiv.appendChild(prodctPrice);
       productDetailsDiv.appendChild(productName);
       productDetailsDiv.appendChild(productDesc);
       productDetailsDiv.appendChild(productIng);
+      productDetailsDiv.appendChild(addToCartBtn);
     }
   }
 }
@@ -71,15 +78,6 @@ export function goToDetailsPage() {
 //   var key = localStorage.key( i );
 //   var item = JSON.parse( localStorage.getItem( key ) );
 // }
-
-function handleAddToCart() {
-  let addToCartBtn: HTMLButtonElement = document.createElement("button");
-  addToCartBtn.setAttribute("type", "button");
-  addToCartBtn.id = "add-to-cart-btn";
-  addToCartBtn.innerText = "Add to Cart";
-  addToCartBtn.addEventListener("click", pushToCart);
-  document.body.appendChild(addToCartBtn);
-}
 
 function pushToCart(e) {
   e.preventDefault();
