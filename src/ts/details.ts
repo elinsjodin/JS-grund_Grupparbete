@@ -22,6 +22,11 @@ window.onload = function () {
   footer();
 };
 
+console.log(productList);
+
+let productsInList = JSON.parse(localStorage.getItem("Product list"));
+productList = JSON.parse("Product list");
+
 let productDetailsDiv: HTMLDivElement = document.getElementById(
   "product-details-container"
 ) as HTMLDivElement;
@@ -62,6 +67,11 @@ export function goToDetailsPage() {
   }
 }
 
+// for(var i=0;i<localStorage.length; i++) {
+//   var key = localStorage.key( i );
+//   var item = JSON.parse( localStorage.getItem( key ) );
+// }
+
 function handleAddToCart() {
   let addToCartBtn: HTMLButtonElement = document.createElement("button");
   addToCartBtn.setAttribute("type", "button");
@@ -76,6 +86,6 @@ function pushToCart(e) {
   cart.addToCart(currentProduct);
 
   for (let i = 0; i < cart.items.length; i++) {
-    cart.items.push(i, 1);
+    cart.items.push(cart[i].items, 1);
   }
 }
