@@ -48,7 +48,7 @@ function start() {
     productDiv.appendChild(productName);
   }
   console.log(productList);
-  
+
   localStorage.setItem("Product list", JSON.stringify(productList));
 }
 

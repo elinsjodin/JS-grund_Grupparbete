@@ -1,8 +1,10 @@
 import { quantityChanged, updateCartTotal } from "./cart";
 import { myNavBar } from "./functions/navbar";
+import { cartDropDown } from "./functions/cartModal";
 
 window.onload = function () {
   myNavBar();
+  cartDropDown();
 };
 
 let orderSum: HTMLDivElement = document.getElementById(
