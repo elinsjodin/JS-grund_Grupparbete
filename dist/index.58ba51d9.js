@@ -467,19 +467,10 @@ window.onload = function() {
 };
 
 },{"./functions/navbar":"fUsK1","./functions/footer":"3hGNG"}],"fUsK1":[function(require,module,exports) {
-var _cartModal = require("./functions/cartModal");
-window.onload = function() {
-    _navbar.myNavBar();
-    _footer.footer();
-    _cartModal.cartDropDown();
-};
-
-},{"./functions/navbar":"fUsK1","./functions/footer":"3hGNG","./functions/cartModal":"c5lkP"}],"fUsK1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "myNavBar", ()=>myNavBar
 );
-var _cartModal = require("./cartModal");
 function myNavBar() {
     let navBarContainer = document.getElementById("nav-container");
     // hamburger menu button
@@ -511,48 +502,35 @@ function myNavBar() {
     });
     navBarContainer.appendChild(navBarLogo);
     // CARTBUTTON
-    let cartButtonDesktop = document.createElement("button");
-    cartButtonDesktop.setAttribute("type", "button");
-    cartButtonDesktop.className = "cart-button-desktop";
-    cartButtonDesktop.addEventListener("click", _cartModal.cartDropDown);
-    let cartButtonMobile = document.createElement("button");
-    cartButtonMobile.setAttribute("type", "button");
-    cartButtonMobile.className = "cart-button-mobile";
-    cartButtonMobile.addEventListener("click", ()=>{
-        if (window.location.href === "http://localhost:1234/pages/cart.html") return false;
-        else location.href = "cart.html";
+    let cartButton = document.createElement("button");
+    cartButton.setAttribute("type", "button");
+    cartButton.className = "cart-button";
+    cartButton.addEventListener("click", ()=>{
+        location.href = "http://localhost:1234/pages/cart.html";
     });
-    let cartBtnOpen = false;
-    cartButtonDesktop.addEventListener("click", ()=>{
-        if (!cartBtnOpen) {
-            cartButtonDesktop.classList.add("is-open");
-            cartDropDownContainer.classList.add("is-down");
-            cartBtnOpen = true;
-        } else {
-            cartButtonDesktop.classList.remove("is-open");
-            cartDropDownContainer.classList.remove("is-down");
-            cartBtnOpen = false;
-        }
-    });
+    // let cartBtnOpen: boolean = false;
+    // cartButtonDesktop.addEventListener("click", () => {
+    //   if (!cartBtnOpen) {
+    //     cartButtonDesktop.classList.add("is-open");
+    //     cartDropDownContainer.classList.add("is-down");
+    //     cartBtnOpen = true;
+    //   } else {
+    //     cartButtonDesktop.classList.remove("is-open");
+    //     cartDropDownContainer.classList.remove("is-down");
+    //     cartBtnOpen = false;
+    //   }
+    // });
     let cartLogo = document.createElement("a");
     cartLogo.className = "cart-logo";
     cartLogo.innerHTML = "<i class='bi bi-bag'></i>";
-    let cartLogoDesktop = document.createElement("a");
-    cartLogoDesktop.className = "cart-logo";
-    cartLogoDesktop.innerHTML = "<i class='bi bi-bag'></i>";
-    cartButtonDesktop.appendChild(cartLogoDesktop);
-    cartButtonMobile.appendChild(cartLogo);
+    cartButton.appendChild(cartLogo);
     let cartCounter = document.createElement("span");
     cartCounter.className = "cart-count";
-    let cartCounterDesktop = document.createElement("span");
-    cartCounterDesktop.className = "cart-count";
-    cartButtonDesktop.appendChild(cartCounterDesktop);
-    cartButtonMobile.appendChild(cartCounter);
-    navBarContainer.appendChild(cartButtonDesktop);
-    navBarContainer.appendChild(cartButtonMobile);
+    cartButton.appendChild(cartCounter);
+    navBarContainer.appendChild(cartButton);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./cartModal":"c5lkP"}],"ciiiV":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -582,98 +560,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-<<<<<<< HEAD
 },{}],"3hGNG":[function(require,module,exports) {
-=======
-},{}],"c5lkP":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "cartDropDown", ()=>cartDropDown
-);
-var _localStorage = require("../functions/localStorage");
-function cartDropDown() {
-    let cartDropDownContainer = document.createElement("div");
-    cartDropDownContainer.id = "cart-dropdown-container";
-    let shoppingCart = document.createElement("div");
-    shoppingCart.className = "shopping-cart";
-    let shoppingCartHeader = document.createElement("div");
-    shoppingCartHeader.className = "shopping-cart-header";
-    let shoppingCartLogo = document.createElement("span");
-    shoppingCartLogo.className = "shopping-cart-logo";
-    shoppingCartLogo.innerHTML = "<i class='bi bi-bag'></i>";
-    let shoppingCartCount = document.createElement("span");
-    shoppingCartCount.className = "shopping-cart-count";
-    shoppingCartCount.innerHTML = counter.toString(); //Skapa funtion
-    shoppingCartCount.addEventListener("change", cartCounter); //Skapa funktion
-    let shoppingCartTotal = document.createElement("span");
-    shoppingCartTotal.className = "shopping-cart-total";
-    shoppingCartTotal.innerText = "Total::-";
-    let shoppingCartItems = document.createElement("ul");
-    shoppingCartItems.className = "shopping-cart-items";
-    shoppingCartItems.innerHTML = "";
-    let cartItems = _localStorage.cartList;
-    for(let i = 0; i < cartItems.length; i++){
-        let cartLi = document.createElement("li");
-        let itemImg = cartItems[i].product.img;
-        let itemTitel = cartItems[i].product.name;
-        let cartTotal = cartItems[i].product.price;
-        let cartCount = cartItems[i].qty;
-        let liImg = document.createElement("span");
-        liImg.innerHTML = itemImg.toString();
-        cartLi.appendChild(liImg);
-        let liTitel = document.createElement("span");
-        liTitel.innerHTML = itemTitel.toString();
-        cartLi.appendChild(liTitel);
-        let liPrice = document.createElement("span");
-        liPrice.innerHTML = cartTotal.toString();
-        cartLi.appendChild(liPrice);
-        let licartCount = document.createElement("span");
-        licartCount.innerHTML = cartCount.toString();
-        cartLi.appendChild(licartCount);
-        shoppingCartItems.appendChild(cartLi);
-    }
-    let viewCartButton = document.createElement("button");
-    viewCartButton.className = "view-cart-button";
-    viewCartButton.innerText = "View Cart";
-    viewCartButton.addEventListener("click", ()=>{
-        if (window.location.href === "http://localhost:1234/pages/cart.html") return false;
-        else location.href = "cart.html";
-    });
-    let shoppingCartCheckoutButton = document.createElement("button");
-    shoppingCartCheckoutButton.className = "shopping-cart-checkout-button";
-    shoppingCartCheckoutButton.innerText = "Checkout";
-    shoppingCartCheckoutButton.addEventListener("click", ()=>{
-        if (window.location.href === "http://localhost:1234/pages/checkout.html") return false;
-        else location.href = "checkout.html";
-    });
-    cartDropDownContainer.appendChild(shoppingCart);
-    shoppingCart.appendChild(shoppingCartHeader);
-    shoppingCartHeader.appendChild(shoppingCartLogo);
-    shoppingCartHeader.appendChild(shoppingCartCount);
-    shoppingCartHeader.appendChild(shoppingCartTotal);
-    shoppingCart.appendChild(shoppingCartItems);
-    shoppingCart.appendChild(viewCartButton);
-    shoppingCart.appendChild(shoppingCartCheckoutButton);
-}
-
-},{"../functions/localStorage":"cAqVF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"cAqVF":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "productList", ()=>productList
-);
-parcelHelpers.export(exports, "detailsList", ()=>detailsList
-);
-parcelHelpers.export(exports, "cartList", ()=>cartList
-);
-parcelHelpers.export(exports, "localStorageKey", ()=>localStorageKey
-);
-let productList = [];
-let detailsList = [];
-let cartList = [];
-let localStorageKey = JSON.parse(localStorage.getItem("localStorageKey"));
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"3hGNG":[function(require,module,exports) {
->>>>>>> feature/cartmodal
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "footer", ()=>footer1
