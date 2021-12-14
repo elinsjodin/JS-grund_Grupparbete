@@ -1,13 +1,6 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
-import {
-  cartList,
-  localStorageKey,
-  productList,
-} from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
-import { cartCount } from "./functions/cartCount";
-import { Detail } from "./models/details";
 import { Cart } from "./models/cart";
 import { Product } from "./models/products";
 
@@ -71,7 +64,6 @@ export function goToDetailsPage() {
       productDetailsDiv.appendChild(addToCartBtn);
     }
   }
-  localStorage.setItem("Cartlist", JSON.stringify(cartList));
 }
 
 function pushToCart(e) {

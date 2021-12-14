@@ -47,8 +47,6 @@ function start() {
     productDiv.appendChild(detailsLink);
     productDiv.appendChild(productName);
   }
-  console.log(productList);
-
   localStorage.setItem("Product list", JSON.stringify(productList));
 }
 

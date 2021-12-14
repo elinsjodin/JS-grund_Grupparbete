@@ -1,5 +1,3 @@
-import { cartDropDown } from "./cartModal";
-
 export function myNavBar() {
   let navBarContainer: HTMLElement = document.getElementById(
     "nav-container"

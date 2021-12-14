@@ -1,25 +1,23 @@
-import { quantityChanged, updateCartTotal } from "./cart";
+import { Cart } from "./models/cart";
 import { myNavBar } from "./functions/navbar";
-import { cartDropDown } from "./functions/cartModal";
 
 window.onload = function () {
   myNavBar();
-  cartDropDown();
+
+  let cart = new Cart();
+
+  let orderSum: HTMLDivElement = document.getElementById(
+    "order-summary"
+  ) as HTMLDivElement;
+
+  let orderQty: HTMLParagraphElement = document.createElement("p");
+  orderQty.id = "order-quantity";
+  orderQty.innerHTML = cart.displayTotalThankyou() + " items";
+
+  let orderTotal: HTMLParagraphElement = document.createElement("p");
+  orderTotal.id = "order-total";
+  orderTotal.innerHTML = "Total: " + cart.updateCartTotal() + ":-";
+
+  orderSum.appendChild(orderQty);
+  orderSum.appendChild(orderTotal);
 };
-
-let orderSum: HTMLDivElement = document.getElementById(
-  "order-summary"
-) as HTMLDivElement;
-
-let orderQty: HTMLParagraphElement = document.getElementById("p");
-orderQty.id = "oder-quantity";
-orderQty.addEventListener("change", quantityChanged());
-orderQty.innerHTML = qtyInput + "items";
-
-let orderTotal: HTMLParagraphElement = document.createElement("p");
-orderTotal.id = "order-total";
-orderTotal.addEventListener("change", updateCartTotal());
-orderTotal.innerHTML = "Total" + total + ":-";
-
-orderSum.appendChild(orderQty);
-orderSum.appendChild(orderTotal);

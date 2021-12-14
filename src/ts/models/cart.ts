@@ -1,6 +1,5 @@
 import { Product } from "./products";
 import { Item } from "./item";
-import { cartList, localStorageKey } from "../functions/localStorage";
 
 export class Cart {
   items: Item[];
@@ -10,7 +9,7 @@ export class Cart {
   }
 
   saveInLocalStorage() {
-    localStorage.setItem("Cartlist", JSON.stringify(this.items)); //cartList?
+    localStorage.setItem("Cartlist", JSON.stringify(this.items));
   }
 
   decrementCart(product: Product) {
@@ -71,16 +70,28 @@ export class Cart {
 
     this.saveInLocalStorage();
     this.displayCartQty();
+    this.displayTotalThankyou();
   }
 
   displayCartQty() {
     let cartBtnQty: HTMLSpanElement = document.getElementById(
       "cart-count"
     ) as HTMLSpanElement;
+
     let totalQty = 0;
     for (let i = 0; i < this.items.length; i++) {
       totalQty += this.items[i].qty;
     }
     cartBtnQty.innerHTML = totalQty.toString();
+  }
+  displayTotalThankyou() {
+    // let orderQty: HTMLParagraphElement = document.getElementById(
+    //   "order-quantity"
+    // ) as HTMLParagraphElement;
+    let totalQty = 0;
+    for (let i = 0; i < this.items.length; i++) {
+      totalQty += this.items[i].qty;
+    }
+    // orderQty.innerHTML = totalQty.toString() + " items";
   }
 }
