@@ -22,7 +22,7 @@ window.onload = function () {
 };
 
 let productsInList = localStorage.getItem("Product list");
-let productDetails = JSON.parse(productsInList);
+let productDetails: Product[] = JSON.parse(productsInList);
 console.log(productDetails);
 
 let productDetailsDiv: HTMLDivElement = document.getElementById(
@@ -34,7 +34,8 @@ let productId = urlParams.get("id");
 
 export function goToDetailsPage() {
   for (let i = 0; i < productDetails.length; i++) {
-    if (productId == productDetails[i].id) {
+    if (productId === productDetails[i].id) {
+      currentProduct = productDetails[i];
       let productImg: HTMLImageElement = document.createElement("img");
       productImg.id = "productImg";
       productImg.alt = "Perfumebottle";
@@ -70,13 +71,16 @@ export function goToDetailsPage() {
       productDetailsDiv.appendChild(addToCartBtn);
     }
   }
+  localStorage.setItem("Cartlist", JSON.stringify(cartList));
 }
 
 function pushToCart(e) {
   e.preventDefault();
   cart.addToCart(currentProduct);
 
-  for (let i = 0; i < cart.items.length; i++) {
-    cart.items.push(cart[i].items, 1);
-  }
+  // for (let i = 0; i < cart.items.length; i++) {
+  //   cart.items.push(
+  //     cartList[i] //, 1);
+  //   );
+  // }
 }

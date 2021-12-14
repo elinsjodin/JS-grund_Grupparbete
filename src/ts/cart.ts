@@ -8,62 +8,67 @@ import { cartList, localStorageKey } from "./functions/localStorage";
 
 import { Cart } from "./models/cart";
 
+let cart = new Cart();
+
 window.onload = function () {
   myNavBar();
-  renderProductsInCart();
+  ProductsInCart();
 };
-
-let cart = cartList;
 
 let cartRows: HTMLDivElement = document.getElementById(
   "cart-rows"
 ) as HTMLDivElement;
 
-function renderProductsInCart() {
-  for (let i = 0; i < cart.length; i++) {
+function ProductsInCart() {
+  for (let i = 0; i < cart.items.length; i++) {
     let itemImg: HTMLImageElement = document.createElement("img");
-    itemImg.src = cart[i].product.img;
-    cartRows.appendChild(itemImg);
+    itemImg.className = "productImg";
+    itemImg.alt = "Perfumebottle";
+    itemImg.src = cart.items[i].product.name;
 
     let itemName: HTMLSpanElement = document.createElement("span");
-    itemName.innerText = cart[i].product.name;
-    cartRows.appendChild(itemName);
+    itemName.innerText = cart.items[i].product.name;
 
     let itemPrice: HTMLSpanElement = document.createElement("span");
     itemPrice.id = "cart-item-price";
-    itemPrice.innerText = cart[i].product.price + ":-";
-    cartRows.appendChild(itemPrice);
+    itemPrice.innerText = cart.items[i].product.price + ":-";
 
     let subBtn: HTMLButtonElement = document.createElement("button");
     subBtn.id = "subBtn";
     subBtn.innerHTML = "<i class='bi bi-dash'></i>";
     subBtn.addEventListener("click", () => {
-      decrementCart(subBtn);
+      //decrementCart(subBtn);
+      cart.decrementCart(cart.items[i].product);
     });
-    cartRows.appendChild(subBtn);
 
     let qtyInput: HTMLInputElement = document.createElement("input");
     qtyInput.id = "qtyInput";
+    qtyInput.value = cart.items[i].qty.toString();
     // let qtyTotal: number = parseInt(qtyInput.value);
-    qtyInput.addEventListener("change", quantityChanged);
-    cartRows.appendChild(qtyInput);
+    // qtyInput.addEventListener("change", quantityChanged);
 
     let addBtn: HTMLButtonElement = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.innerHTML = "<i class='bi bi-plus'></i>";
     addBtn.addEventListener("click", () => {
-      incrementCart(addBtn);
+      cart.incrementCart(cart.items[i].product);
     });
-    cartRows.appendChild(addBtn);
 
     let deleteBtn: HTMLButtonElement = document.createElement("button");
     deleteBtn.id = "deleteBtn";
     deleteBtn.innerHTML = "<i class='bi bi-x'></i>";
     deleteBtn.addEventListener("click", () =>
-      removeItemFromCart(cart[i].product)
+      cart.removeItemFromCart(cart.items[i].product)
     );
+    cartRows.appendChild(itemImg);
+    cartRows.appendChild(itemName);
+    cartRows.appendChild(itemPrice);
+    cartRows.appendChild(subBtn);
+    cartRows.appendChild(qtyInput);
+    cartRows.appendChild(addBtn);
     cartRows.appendChild(deleteBtn);
   }
+  // this.displayCartQty();
 }
 
 let checkoutBtn = document.getElementById(
