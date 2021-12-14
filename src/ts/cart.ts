@@ -1,11 +1,4 @@
 import { myNavBar } from "./functions/navbar";
-
-import { Product } from "./models/products";
-
-import { Item } from "./models/item";
-
-import { cartList, localStorageKey } from "./functions/localStorage";
-
 import { Cart } from "./models/cart";
 
 let cart = new Cart();
@@ -20,11 +13,12 @@ let cartRows: HTMLDivElement = document.getElementById(
 ) as HTMLDivElement;
 
 function ProductsInCart() {
+  cartRows.innerHTML = "";
   for (let i = 0; i < cart.items.length; i++) {
     let itemImg: HTMLImageElement = document.createElement("img");
     itemImg.className = "productImg";
     itemImg.alt = "Perfumebottle";
-    itemImg.src = cart.items[i].product.name;
+    itemImg.src = cart.items[i].product.img;
 
     let itemName: HTMLSpanElement = document.createElement("span");
     itemName.innerText = cart.items[i].product.name;
@@ -37,8 +31,8 @@ function ProductsInCart() {
     subBtn.id = "subBtn";
     subBtn.innerHTML = "<i class='bi bi-dash'></i>";
     subBtn.addEventListener("click", () => {
-      //decrementCart(subBtn);
       cart.decrementCart(cart.items[i].product);
+      ProductsInCart();
     });
 
     let qtyInput: HTMLInputElement = document.createElement("input");
@@ -52,14 +46,16 @@ function ProductsInCart() {
     addBtn.innerHTML = "<i class='bi bi-plus'></i>";
     addBtn.addEventListener("click", () => {
       cart.incrementCart(cart.items[i].product);
+      ProductsInCart();
     });
 
     let deleteBtn: HTMLButtonElement = document.createElement("button");
     deleteBtn.id = "deleteBtn";
     deleteBtn.innerHTML = "<i class='bi bi-x'></i>";
-    deleteBtn.addEventListener("click", () =>
-      cart.removeItemFromCart(cart.items[i].product)
-    );
+    deleteBtn.addEventListener("click", () =>{
+      cart.removeItemFromCart(cart.items[i].product);
+      ProductsInCart();
+    });
     cartRows.appendChild(itemImg);
     cartRows.appendChild(itemName);
     cartRows.appendChild(itemPrice);

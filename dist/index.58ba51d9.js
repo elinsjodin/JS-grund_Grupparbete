@@ -461,12 +461,6 @@ function hmrAcceptRun(bundle, id) {
 },{}],"7BLcd":[function(require,module,exports) {
 var _navbar = require("./functions/navbar");
 var _footer = require("./functions/footer");
-window.onload = function() {
-    _navbar.myNavBar();
-    _footer.footer();
-};
-
-},{"./functions/navbar":"fUsK1","./functions/footer":"3hGNG"}],"fUsK1":[function(require,module,exports) {
 var _cartModal = require("./functions/cartModal");
 window.onload = function() {
     _navbar.myNavBar();
@@ -519,21 +513,20 @@ function myNavBar() {
     cartButtonMobile.setAttribute("type", "button");
     cartButtonMobile.className = "cart-button-mobile";
     cartButtonMobile.addEventListener("click", ()=>{
-        if (window.location.href === "http://localhost:1234/pages/cart.html") return false;
-        else location.href = "cart.html";
+        location.href = "http://localhost:1234/pages/cart.html";
     });
-    let cartBtnOpen = false;
-    cartButtonDesktop.addEventListener("click", ()=>{
-        if (!cartBtnOpen) {
-            cartButtonDesktop.classList.add("is-open");
-            cartDropDownContainer.classList.add("is-down");
-            cartBtnOpen = true;
-        } else {
-            cartButtonDesktop.classList.remove("is-open");
-            cartDropDownContainer.classList.remove("is-down");
-            cartBtnOpen = false;
-        }
-    });
+    // let cartBtnOpen: boolean = false;
+    // cartButtonDesktop.addEventListener("click", () => {
+    //   if (!cartBtnOpen) {
+    //     cartButtonDesktop.classList.add("is-open");
+    //     cartDropDownContainer.classList.add("is-down");
+    //     cartBtnOpen = true;
+    //   } else {
+    //     cartButtonDesktop.classList.remove("is-open");
+    //     cartDropDownContainer.classList.remove("is-down");
+    //     cartBtnOpen = false;
+    //   }
+    // });
     let cartLogo = document.createElement("a");
     cartLogo.className = "cart-logo";
     cartLogo.innerHTML = "<i class='bi bi-bag'></i>";
@@ -582,9 +575,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-<<<<<<< HEAD
-},{}],"3hGNG":[function(require,module,exports) {
-=======
 },{}],"c5lkP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -673,7 +663,6 @@ let cartList = [];
 let localStorageKey = JSON.parse(localStorage.getItem("localStorageKey"));
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"3hGNG":[function(require,module,exports) {
->>>>>>> feature/cartmodal
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "footer", ()=>footer1

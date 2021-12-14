@@ -1,6 +1,5 @@
 import { Product } from "./products";
 import { Item } from "./item";
-import { cartList, localStorageKey } from "../functions/localStorage";
 
 export class Cart {
   items: Item[];
@@ -10,7 +9,7 @@ export class Cart {
   }
 
   saveInLocalStorage() {
-    localStorage.setItem("Cartlist", JSON.stringify(this.items)); //cartList?
+    localStorage.setItem("Cartlist", JSON.stringify(this.items));
   }
 
   decrementCart(product: Product) {
@@ -19,7 +18,6 @@ export class Cart {
         this.items[i].qty--;
       }
     }
-
     this.updateCartTotal();
     this.saveInLocalStorage();
   }
@@ -27,7 +25,7 @@ export class Cart {
   incrementCart(product: Product) {
     for (let i = 0; i < this.items.length; i++) {
       if (this.items[i].product.name === product.name) {
-        this.items++;
+        this.items[i].qty++;
       }
     }
     this.updateCartTotal();
@@ -60,7 +58,6 @@ export class Cart {
     }
     total = Math.round(total * 100) / 100;
     return total;
-    this.saveInLocalStorage(); //return?
   }
 
   addToCart(productToAdd: Product) {
@@ -80,8 +77,6 @@ export class Cart {
     }
     this.saveInLocalStorage();
   }
-
-  //Kod för span med class "cart-button-qty" finns i annan branch som inte är mergad med develop:
   displayCartQty() {
     let cartBtnQty: HTMLSpanElement = document.getElementById(
       "cart-button-qty"

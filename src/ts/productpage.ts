@@ -49,7 +49,7 @@ function start() {
   }
   console.log(productList);
 
-  localStorage.setItem("Product list", JSON.stringify(productList));
+  localStorage.setItem("Productlist", JSON.stringify(productList));
 }
 
 function redirect(productId: string) {
