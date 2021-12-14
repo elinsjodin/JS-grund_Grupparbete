@@ -27,7 +27,7 @@ export class Cart {
   incrementCart(product: Product) {
     for (let i = 0; i < this.items.length; i++) {
       if (this.items[i].product.name === product.name) {
-        this.items++;
+        this.items[i].qty++;
       }
     }
     this.updateCartTotal();
@@ -44,15 +44,6 @@ export class Cart {
     this.saveInLocalStorage();
   }
 
-  quantityChanged() {
-    let input = qtyInput.target;
-    if (isNaN(input.value) || input.value <= 0) {
-      input.value = 1;
-    }
-    this.updateCartTotal();
-    this.saveInLocalStorage();
-  }
-
   updateCartTotal(): number {
     let total: number = 0;
     for (let i = 0; i < this.items.length; i++) {
@@ -60,7 +51,6 @@ export class Cart {
     }
     total = Math.round(total * 100) / 100;
     return total;
-    this.saveInLocalStorage(); //return?
   }
 
   addToCart(productToAdd: Product) {
@@ -78,17 +68,18 @@ export class Cart {
       };
       this.items.push(item);
     }
+
     this.saveInLocalStorage();
+    this.displayCartQty();
   }
 
-  //Kod för span med class "cart-button-qty" finns i annan branch som inte är mergad med develop:
   displayCartQty() {
     let cartBtnQty: HTMLSpanElement = document.getElementById(
-      "cart-button-qty"
+      "cart-count"
     ) as HTMLSpanElement;
     let totalQty = 0;
     for (let i = 0; i < this.items.length; i++) {
-      totalQty = +this.items[i].qty;
+      totalQty += this.items[i].qty;
     }
     cartBtnQty.innerHTML = totalQty.toString();
   }

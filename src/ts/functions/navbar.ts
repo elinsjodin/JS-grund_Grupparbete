@@ -47,10 +47,10 @@ export function myNavBar() {
   cartButtonDesktop.className = "cart-button-desktop";
   cartButtonDesktop.addEventListener("click", cartDropDown);
 
-  let cartButtonMobile: HTMLButtonElement = document.createElement("button");
-  cartButtonMobile.setAttribute("type", "button");
-  cartButtonMobile.className = "cart-button-mobile";
-  cartButtonMobile.addEventListener("click", () => {
+  let cartButton: HTMLButtonElement = document.createElement("button");
+  cartButton.setAttribute("type", "button");
+  cartButton.className = "cart-button-mobile";
+  cartButton.addEventListener("click", () => {
     location.href = "http://localhost:1234/pages/cart.html";
   });
 
@@ -71,22 +71,13 @@ export function myNavBar() {
   cartLogo.className = "cart-logo";
   cartLogo.innerHTML = "<i class='bi bi-bag'></i>";
 
-  let cartLogoDesktop: HTMLAnchorElement = document.createElement("a");
-  cartLogoDesktop.className = "cart-logo";
-  cartLogoDesktop.innerHTML = "<i class='bi bi-bag'></i>";
-
-  cartButtonDesktop.appendChild(cartLogoDesktop);
-  cartButtonMobile.appendChild(cartLogo);
+  cartButton.appendChild(cartLogo);
 
   let cartCounter: HTMLSpanElement = document.createElement("span");
   cartCounter.className = "cart-count";
+  cartCounter.id = "cart-count";
 
-  let cartCounterDesktop: HTMLSpanElement = document.createElement("span");
-  cartCounterDesktop.className = "cart-count";
+  cartButton.appendChild(cartCounter);
 
-  cartButtonDesktop.appendChild(cartCounterDesktop);
-  cartButtonMobile.appendChild(cartCounter);
-
-  navBarContainer.appendChild(cartButtonDesktop);
-  navBarContainer.appendChild(cartButtonMobile);
+  navBarContainer.appendChild(cartButton);
 }
