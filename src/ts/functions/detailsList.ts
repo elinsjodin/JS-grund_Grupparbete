@@ -58,5 +58,5 @@ export function listOfItemsInDetails() {
     itemTen
   );
 
-  localStorage.setItem("Details list", JSON.stringify(detailsList));
+  localStorage.setItem("Detailslist", JSON.stringify(detailsList));
 }

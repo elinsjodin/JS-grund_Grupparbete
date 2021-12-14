@@ -47,7 +47,8 @@ function start() {
     productDiv.appendChild(detailsLink);
     productDiv.appendChild(productName);
   }
-  localStorage.setItem("Product list", JSON.stringify(productList));
+
+  localStorage.setItem("Productlist", JSON.stringify(productList));
 }
 
 function redirect(productId: string) {

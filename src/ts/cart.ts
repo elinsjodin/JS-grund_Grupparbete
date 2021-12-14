@@ -1,11 +1,4 @@
 import { myNavBar } from "./functions/navbar";
-
-import { Product } from "./models/products";
-
-import { Item } from "./models/item";
-
-import { cartList, localStorageKey } from "./functions/localStorage";
-
 import { Cart } from "./models/cart";
 
 let cart = new Cart();
@@ -39,7 +32,6 @@ function ProductsInCart() {
     subBtn.id = "subBtn";
     subBtn.innerHTML = "<i class='bi bi-dash'></i>";
     subBtn.addEventListener("click", () => {
-      //decrementCart(subBtn);
       cart.decrementCart(cart.items[i].product);
       ProductsInCart();
     });

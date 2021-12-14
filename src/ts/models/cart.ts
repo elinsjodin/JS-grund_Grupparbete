@@ -18,7 +18,6 @@ export class Cart {
         this.items[i].qty--;
       }
     }
-
     this.updateCartTotal();
     this.saveInLocalStorage();
   }
@@ -72,7 +71,6 @@ export class Cart {
     this.displayCartQty();
     this.displayTotalThankyou();
   }
-
   displayCartQty() {
     let cartBtnQty: HTMLSpanElement = document.getElementById(
       "cart-count"
