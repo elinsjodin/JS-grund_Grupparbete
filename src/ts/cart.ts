@@ -8,6 +8,8 @@ import { cartList, localStorageKey } from "./functions/localStorage";
 
 import { Cart } from "./models/cart";
 
+import perfumeimage from "../../components/perfumebottle.jpg";
+
 let cart = new Cart();
 
 window.onload = function () {
@@ -24,7 +26,7 @@ function ProductsInCart() {
     let itemImg: HTMLImageElement = document.createElement("img");
     itemImg.className = "productImg";
     itemImg.alt = "Perfumebottle";
-    itemImg.src = cart.items[i].product.name;
+    itemImg.src = cart.items[i].product.img;
 
     let itemName: HTMLSpanElement = document.createElement("span");
     itemName.innerText = cart.items[i].product.name;
@@ -68,8 +70,10 @@ function ProductsInCart() {
     cartRows.appendChild(addBtn);
     cartRows.appendChild(deleteBtn);
   }
-  // this.displayCartQty();
+  this.displayCartQty();
 }
+
+console.log(cart.items);
 
 let checkoutBtn = document.getElementById(
   "checkout-button"
