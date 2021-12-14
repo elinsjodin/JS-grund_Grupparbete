@@ -42,15 +42,6 @@ export class Cart {
     this.saveInLocalStorage();
   }
 
-  quantityChanged() {
-    let input = qtyInput.target;
-    if (isNaN(input.value) || input.value <= 0) {
-      input.value = 1;
-    }
-    this.updateCartTotal();
-    this.saveInLocalStorage();
-  }
-
   updateCartTotal(): number {
     let total: number = 0;
     for (let i = 0; i < this.items.length; i++) {
@@ -75,15 +66,17 @@ export class Cart {
       };
       this.items.push(item);
     }
+
     this.saveInLocalStorage();
+    this.displayCartQty();
   }
   displayCartQty() {
     let cartBtnQty: HTMLSpanElement = document.getElementById(
-      "cart-button-qty"
+      "cart-count"
     ) as HTMLSpanElement;
     let totalQty = 0;
     for (let i = 0; i < this.items.length; i++) {
-      totalQty = +this.items[i].qty;
+      totalQty += this.items[i].qty;
     }
     cartBtnQty.innerHTML = totalQty.toString();
   }

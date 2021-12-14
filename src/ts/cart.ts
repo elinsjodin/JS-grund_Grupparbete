@@ -14,6 +14,7 @@ let cartRows: HTMLDivElement = document.getElementById(
 
 function ProductsInCart() {
   cartRows.innerHTML = "";
+
   for (let i = 0; i < cart.items.length; i++) {
     let itemImg: HTMLImageElement = document.createElement("img");
     itemImg.className = "productImg";
@@ -38,8 +39,6 @@ function ProductsInCart() {
     let qtyInput: HTMLInputElement = document.createElement("input");
     qtyInput.id = "qtyInput";
     qtyInput.value = cart.items[i].qty.toString();
-    // let qtyTotal: number = parseInt(qtyInput.value);
-    // qtyInput.addEventListener("change", quantityChanged);
 
     let addBtn: HTMLButtonElement = document.createElement("button");
     addBtn.id = "addBtn";
@@ -52,7 +51,7 @@ function ProductsInCart() {
     let deleteBtn: HTMLButtonElement = document.createElement("button");
     deleteBtn.id = "deleteBtn";
     deleteBtn.innerHTML = "<i class='bi bi-x'></i>";
-    deleteBtn.addEventListener("click", () =>{
+    deleteBtn.addEventListener("click", () => {
       cart.removeItemFromCart(cart.items[i].product);
       ProductsInCart();
     });
@@ -64,7 +63,13 @@ function ProductsInCart() {
     cartRows.appendChild(addBtn);
     cartRows.appendChild(deleteBtn);
   }
-  // this.displayCartQty();
+
+  let total = cart.updateCartTotal();
+  let cartTotal: HTMLDivElement = document.getElementById(
+    "cart-total"
+  ) as HTMLDivElement;
+  cartTotal.innerHTML = "Total: " + total.toString() + ":-";
+  cart.displayCartQty();
 }
 
 let checkoutBtn = document.getElementById(
@@ -75,7 +80,3 @@ checkoutBtn.addEventListener("click", checkout);
 function checkout() {
   location.href = "checkout.html";
 }
-// let totalCartPrice: HTMLSpanElement = document.getElementById(
-//   "total-cart-price"
-// ) as HTMLDivElement;
-// totalCartPrice.innerText = total + ":-";
