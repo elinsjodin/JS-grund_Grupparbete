@@ -16,7 +16,6 @@ let currentProduct: Product;
 
 window.onload = function () {
   myNavBar();
-  handleAddToCart();
   listOfItemsInDetails();
   goToDetailsPage();
   footer();
@@ -72,11 +71,6 @@ export function goToDetailsPage() {
     }
   }
 }
-
-// for(var i=0;i<localStorage.length; i++) {
-//   var key = localStorage.key( i );
-//   var item = JSON.parse( localStorage.getItem( key ) );
-// }
 
 function pushToCart(e) {
   e.preventDefault();
