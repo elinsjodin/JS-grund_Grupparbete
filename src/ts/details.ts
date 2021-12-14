@@ -16,14 +16,13 @@ let currentProduct: Product;
 
 window.onload = function () {
   myNavBar();
-  handleAddToCart();
   listOfItemsInDetails();
   goToDetailsPage();
   footer();
 };
 
 let productsInList = localStorage.getItem("Product list");
-let productDetails = JSON.parse(productsInList);
+let productDetails: Product[] = JSON.parse(productsInList);
 console.log(productDetails);
 
 let productDetailsDiv: HTMLDivElement = document.getElementById(
@@ -35,7 +34,8 @@ let productId = urlParams.get("id");
 
 export function goToDetailsPage() {
   for (let i = 0; i < productDetails.length; i++) {
-    if (productId == productDetails[i].id) {
+    if (productId === productDetails[i].id) {
+      currentProduct = productDetails[i];
       let productImg: HTMLImageElement = document.createElement("img");
       productImg.id = "productImg";
       productImg.alt = "Perfumebottle";
@@ -57,34 +57,30 @@ export function goToDetailsPage() {
       productIng.className = "product-ing";
       productIng.innerHTML = productDetails[i].detail.ing;
 
+      let addToCartBtn: HTMLButtonElement = document.createElement("button");
+      addToCartBtn.setAttribute("type", "button");
+      addToCartBtn.id = "add-to-cart-btn";
+      addToCartBtn.innerText = "Add to Cart";
+      addToCartBtn.addEventListener("click", pushToCart);
+
       productDetailsDiv.appendChild(productImg);
       productDetailsDiv.appendChild(prodctPrice);
       productDetailsDiv.appendChild(productName);
       productDetailsDiv.appendChild(productDesc);
       productDetailsDiv.appendChild(productIng);
+      productDetailsDiv.appendChild(addToCartBtn);
     }
   }
-}
-
-// for(var i=0;i<localStorage.length; i++) {
-//   var key = localStorage.key( i );
-//   var item = JSON.parse( localStorage.getItem( key ) );
-// }
-
-function handleAddToCart() {
-  let addToCartBtn: HTMLButtonElement = document.createElement("button");
-  addToCartBtn.setAttribute("type", "button");
-  addToCartBtn.id = "add-to-cart-btn";
-  addToCartBtn.innerText = "Add to Cart";
-  addToCartBtn.addEventListener("click", pushToCart);
-  document.body.appendChild(addToCartBtn);
+  localStorage.setItem("Cartlist", JSON.stringify(cartList));
 }
 
 function pushToCart(e) {
   e.preventDefault();
   cart.addToCart(currentProduct);
 
-  for (let i = 0; i < cart.items.length; i++) {
-    cart.items.push(cart[i].items, 1);
-  }
+  // for (let i = 0; i < cart.items.length; i++) {
+  //   cart.items.push(
+  //     cartList[i] //, 1);
+  //   );
+  // }
 }
