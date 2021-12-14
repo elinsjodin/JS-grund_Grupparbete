@@ -30,9 +30,12 @@ export function myNavBar() {
   });
 
   // LOGO
-  let navBarLogo: HTMLHeadingElement = document.createElement("h3");
+  let navBarLogo: HTMLHeadingElement = document.createElement("p");
   navBarLogo.className = "navbar-logo";
   navBarLogo.innerText = "NLP";
+  navBarLogo.addEventListener("click", ()=>{
+    location.href = "http://localhost:1234/index.html";
+  });
 
   navBarContainer.appendChild(navBarLogo);
 
@@ -42,12 +45,7 @@ export function myNavBar() {
   cartButton.className = "cart-button";
   cartButton.innerHTML = "<i class='bi bi-bag'></i>";
   cartButton.addEventListener("click", () => {
-      if(window.location.href === "http://localhost:1234/pages/cart.html"){
-          return false;
-        }
-        else{
-            location.href = "cart.html";
-        }
+    location.href = "http://localhost:1234/pages/cart.html";
   });
 
   let cartCounter: HTMLSpanElement = document.getElementById(
