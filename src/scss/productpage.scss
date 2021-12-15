@@ -36,6 +36,31 @@
     background-color: $white;
   }
 }
+#hero-div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  .product-div {
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    .product-name,
+    .product-price {
+      padding-left: 20px;
+      font-size: 2rem;
+    }
+    .product-img {
+      cursor: pointer;
+    }
+    .product-name {
+      font-weight: 100;
+    }
+    .product-price {
+      font-family: "Roboto Condensed", sans-serif;
+    }
+  }
+}
 #footer-container {
   height: 15vh;
   padding: 20px;
