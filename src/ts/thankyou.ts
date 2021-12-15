@@ -12,7 +12,7 @@ window.onload = function () {
 
   let orderQty: HTMLParagraphElement = document.createElement("p");
   orderQty.id = "order-quantity";
-  orderQty.innerHTML = cart.displayTotalThankyou() + " items";
+  orderQty.innerHTML = cart.displayCartQty() + " items";
 
   let orderTotal: HTMLParagraphElement = document.createElement("p");
   orderTotal.id = "order-total";
