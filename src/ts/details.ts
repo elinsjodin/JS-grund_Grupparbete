@@ -15,7 +15,7 @@ window.onload = function () {
   footer();
 };
 
-let productsInList = localStorage.getItem("Productlist");
+let productsInList = localStorage.getItem("Product list");
 let productDetails: Product[] = JSON.parse(productsInList);
 console.log(productDetails);
 
@@ -64,8 +64,8 @@ export function goToDetailsPage() {
       productDetailsDiv.appendChild(productIng);
       productDetailsDiv.appendChild(addToCartBtn);
     }
+    localStorage.setItem("Cartlist", JSON.stringify(cartList));
   }
-  localStorage.setItem("Cartlist", JSON.stringify(cartList));
 }
 
 function pushToCart(e) {
