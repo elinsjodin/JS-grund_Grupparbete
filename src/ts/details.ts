@@ -1,6 +1,5 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
-import { cartList } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
 import { Cart } from "./models/cart";
 import { Product } from "./models/products";
@@ -17,7 +16,7 @@ window.onload = function () {
 
 let productsInList = localStorage.getItem("Productlist");
 let productDetails: Product[] = JSON.parse(productsInList);
-console.log(productDetails);
+// console.log(productDetails);
 
 let productDetailsDiv: HTMLDivElement = document.getElementById(
   "product-details-container"
@@ -69,4 +68,5 @@ export function goToDetailsPage() {
 function pushToCart(e) {
   e.preventDefault();
   cart.addToCart(currentProduct);
+  cart.displayCartQty();
 }

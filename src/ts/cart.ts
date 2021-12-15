@@ -31,22 +31,27 @@ function ProductsInCart() {
     let subBtn: HTMLButtonElement = document.createElement("button");
     subBtn.id = "subBtn";
     subBtn.innerHTML = "<i class='bi bi-dash'></i>";
-    subBtn.addEventListener("click", () => {
-      cart.decrementCart(cart.items[i].product);
-      ProductsInCart();
-    });
+    if (cart.items[i].qty !== 1) {
+      subBtn.addEventListener("click", () => {
+        cart.decrementCart(cart.items[i].product);
+        ProductsInCart();
+      });
+    }
 
     let qtyInput: HTMLInputElement = document.createElement("input");
+    qtyInput.setAttribute("readonly", "readonly");
     qtyInput.id = "qtyInput";
     qtyInput.value = cart.items[i].qty.toString();
 
     let addBtn: HTMLButtonElement = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.innerHTML = "<i class='bi bi-plus'></i>";
-    addBtn.addEventListener("click", () => {
-      cart.incrementCart(cart.items[i].product);
-      ProductsInCart();
-    });
+    if (cart.items[i].qty < 99) {
+      addBtn.addEventListener("click", () => {
+        cart.incrementCart(cart.items[i].product);
+        ProductsInCart();
+      });
+    }
 
     let deleteBtn: HTMLButtonElement = document.createElement("button");
     deleteBtn.id = "deleteBtn";

@@ -4,6 +4,7 @@ import { footer } from "./functions/footer";
 import { products } from "./functions/productList";
 import { productList } from "./functions/localStorage";
 import { goToDetailsPage } from "./details";
+import { Cart } from "./models/cart";
 
 window.onload = function () {
   myNavBar();
