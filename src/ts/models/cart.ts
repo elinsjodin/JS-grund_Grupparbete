@@ -71,6 +71,8 @@ export class Cart {
     this.saveInLocalStorage();
   }
   displayCartQty() {
+    // let productsInList = localStorage.getItem("Productlist");
+    // let productDetails: Product[] = JSON.parse(productsInList);
     let totalQty = 0;
     for (let i = 0; i < this.items.length; i++) {
       totalQty += this.items[i].qty;
