@@ -1,13 +1,7 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
-import {
-  cartList,
-  localStorageKey,
-  productList,
-} from "./functions/localStorage";
+import { cartList } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
-import { cartCount } from "./functions/cartCount";
-import { Detail } from "./models/details";
 import { Cart } from "./models/cart";
 import { Product } from "./models/products";
 
@@ -77,10 +71,4 @@ export function goToDetailsPage() {
 function pushToCart(e) {
   e.preventDefault();
   cart.addToCart(currentProduct);
-
-  // for (let i = 0; i < cart.items.length; i++) {
-  //   cart.items.push(
-  //     cartList[i] //, 1);
-  //   );
-  // }
 }
