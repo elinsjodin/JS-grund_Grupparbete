@@ -36,26 +36,33 @@
     background-color: $white;
   }
 }
-#main-thankyou-container {
+#wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 100px;
-  align-items: center;
-  flex-direction: column;
-  .thankyou {
+  justify-content: center;
+  margin-top: 15px;
+  .main-thankyou-container {
+    min-width: 50%;
+    max-width: 60%;
     display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    .thankyou-text {
-      font-size: 40px;
-    }
-    .receipt{
-      .receipt-text
-    }
 
-  }
-}
-#receipt {
-  display: flex;
-  .receipt-text {
+    .thankyou {
+      display: flex;
+      text-align: center;
+      .thankyou-text {
+        font-size: 40px;
+      }
+    }
+    .receipt {
+      display: flex;
+      .receipt-text {
+        font-size: 15px;
+        text-align: center;
+      }
+    }
   }
 }
