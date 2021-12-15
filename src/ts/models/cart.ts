@@ -77,6 +77,7 @@ export class Cart {
     for (let i = 0; i < this.items.length; i++) {
       totalQty += this.items[i].qty;
     }
+    document.getElementById("cart-count").innerHTML = totalQty.toString();
     return totalQty;
   }
 }

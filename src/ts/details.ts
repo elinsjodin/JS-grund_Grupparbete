@@ -1,3 +1,4 @@
+import { ProductsInCart } from "./cart";
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
 import { myNavBar } from "./functions/navbar";
