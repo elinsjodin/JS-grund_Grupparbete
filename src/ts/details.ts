@@ -1,5 +1,6 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
+import { cartList } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
 import { Cart } from "./models/cart";
 import { Product } from "./models/products";
