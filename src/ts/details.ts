@@ -65,8 +65,8 @@ export function goToDetailsPage() {
     }
   }
 }
-
-function pushToCart() {
+function pushToCart(e) {
+  e.preventDefault();
   cart.addToCart(currentProduct);
   cart.displayCartQty();
 }

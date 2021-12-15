@@ -1,7 +1,5 @@
 import { Detail } from "../models/details";
-// import perfumeimage from "../../components/perfumebottle.jpg";
 import { detailsList } from "./localStorage";
-import { Product } from "../models/products";
 
 export function listOfItemsInDetails() {
   let itemOne: Detail = new Detail(

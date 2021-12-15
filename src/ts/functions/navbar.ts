@@ -45,7 +45,7 @@ export function myNavBar() {
 
   let cartButton: HTMLButtonElement = document.createElement("button");
   cartButton.setAttribute("type", "button");
-  cartButton.className = "cart-button-mobile";
+  cartButton.className = "cart-button";
   cartButton.addEventListener("click", () => {
     location.href = "http://localhost:1234/pages/cart.html";
   });
