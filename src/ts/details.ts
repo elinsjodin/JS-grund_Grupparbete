@@ -15,8 +15,9 @@ window.onload = function () {
   footer();
 };
 
-let productsInList = localStorage.getItem("Productlist");
+let productsInList = localStorage.getItem("Product list");
 let productDetails: Product[] = JSON.parse(productsInList);
+console.log(productDetails);
 
 let productDetailsDiv: HTMLDivElement = document.getElementById(
   "product-details-container"
