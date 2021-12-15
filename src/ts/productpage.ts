@@ -2,8 +2,9 @@ import { myNavBar } from "./functions/navbar";
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
 import { products } from "./functions/productList";
-import { localStorageKey, productList } from "./functions/localStorage";
+import { productList } from "./functions/localStorage";
 import { goToDetailsPage } from "./details";
+import { Cart } from "./models/cart";
 
 window.onload = function () {
   myNavBar();

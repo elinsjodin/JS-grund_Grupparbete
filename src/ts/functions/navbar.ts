@@ -1,4 +1,8 @@
+import { Cart } from "../models/cart";
+
 export function myNavBar() {
+  let cart = new Cart();
+
   let navBarContainer: HTMLElement = document.getElementById(
     "nav-container"
   ) as HTMLElement;
@@ -39,12 +43,6 @@ export function myNavBar() {
 
   navBarContainer.appendChild(navBarLogo);
 
-  // CARTBUTTON
-  // let cartButtonDesktop: HTMLButtonElement = document.createElement("button");
-  // cartButtonDesktop.setAttribute("type", "button");
-  // cartButtonDesktop.className = "cart-button-desktop";
-  // cartButtonDesktop.addEventListener("click", cartDropDown);
-
   let cartButton: HTMLButtonElement = document.createElement("button");
   cartButton.setAttribute("type", "button");
   cartButton.className = "cart-button-mobile";
@@ -74,8 +72,10 @@ export function myNavBar() {
   let cartCounter: HTMLSpanElement = document.createElement("span");
   cartCounter.className = "cart-count";
   cartCounter.id = "cart-count";
+  cartCounter.innerHTML = cart.displayCartQty().toString();
 
   cartButton.appendChild(cartCounter);
 
   navBarContainer.appendChild(cartButton);
+  cart.displayCartQty();
 }

@@ -11,7 +11,7 @@ window.onload = function () {
   ) as HTMLDivElement;
 
   let orderQty: HTMLParagraphElement = document.createElement("p");
-  orderQty.id = "order-quantity";
+  orderQty.id = "cart-count";
   orderQty.innerHTML = cart.displayCartQty() + " items";
 
   let orderTotal: HTMLParagraphElement = document.createElement("p");
@@ -20,4 +20,5 @@ window.onload = function () {
 
   orderSum.appendChild(orderQty);
   orderSum.appendChild(orderTotal);
+  cart.displayCartQty();
 };

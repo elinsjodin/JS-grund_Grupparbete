@@ -18,6 +18,7 @@ export class Cart {
         this.items[i].qty--;
       }
     }
+
     this.updateCartTotal();
     this.saveInLocalStorage();
   }
@@ -66,23 +67,14 @@ export class Cart {
       };
       this.items.push(item);
     }
-
-    this.saveInLocalStorage();
     this.displayCartQty();
+    this.saveInLocalStorage();
   }
   displayCartQty() {
-    let cartBtnQty: HTMLSpanElement = document.getElementById(
-      "cart-count"
-    ) as HTMLSpanElement;
-    // let orderQty: HTMLParagraphElement = document.getElementById(
-    //   "order-quantity"
-    // ) as HTMLParagraphElement;
-
     let totalQty = 0;
     for (let i = 0; i < this.items.length; i++) {
       totalQty += this.items[i].qty;
     }
-    cartBtnQty.innerHTML = totalQty.toString();
-    // orderQty.innerHTML = totalQty.toString() + " items";
+    return totalQty;
   }
 }

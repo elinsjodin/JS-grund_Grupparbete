@@ -1,6 +1,5 @@
 import { listOfItemsInDetails } from "./functions/detailsList";
 import { footer } from "./functions/footer";
-import { cartList } from "./functions/localStorage";
 import { myNavBar } from "./functions/navbar";
 import { Cart } from "./models/cart";
 import { Product } from "./models/products";
@@ -15,7 +14,7 @@ window.onload = function () {
   footer();
 };
 
-let productsInList = localStorage.getItem("Product list");
+let productsInList = localStorage.getItem("Productlist");
 let productDetails: Product[] = JSON.parse(productsInList);
 console.log(productDetails);
 
@@ -64,11 +63,9 @@ export function goToDetailsPage() {
       productDetailsDiv.appendChild(productIng);
       productDetailsDiv.appendChild(addToCartBtn);
     }
-    localStorage.setItem("Cartlist", JSON.stringify(cartList));
   }
 }
 
-function pushToCart(e) {
-  e.preventDefault();
+function pushToCart() {
   cart.addToCart(currentProduct);
 }
