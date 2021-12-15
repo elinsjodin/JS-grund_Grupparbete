@@ -39,7 +39,6 @@ function ProductsInCart() {
     subBtn.id = "subBtn";
     subBtn.innerHTML = "<i class='bi bi-dash'></i>";
     subBtn.addEventListener("click", () => {
-      //decrementCart(subBtn);
       cart.decrementCart(cart.items[i].product);
       ProductsInCart();
     });
