@@ -8,6 +8,10 @@
   font-family: "Space Mono", monospace;
 }
 #nav-wrapper {
+  position: fixed;
+  width: 100%;
+  background-color: $white;
+  z-index: 999;
   #nav-container {
     width: 100%;
     display: flex;
@@ -23,8 +27,13 @@
       border: none;
       background-color: $white;
       cursor: pointer;
+      span {
+        position: relative;
+        right: 23px;
+        bottom: 2px;
+      }
       i {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
     }
   }
