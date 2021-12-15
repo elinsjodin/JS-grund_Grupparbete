@@ -1,4 +1,4 @@
-import { cartDropDown } from "./cartModal";
+// import { cartDropDown } from "./cartModal";
 
 export function myNavBar() {
   let navBarContainer: HTMLElement = document.getElementById(
@@ -42,14 +42,14 @@ export function myNavBar() {
   navBarContainer.appendChild(navBarLogo);
 
   // CARTBUTTON
-  let cartButtonDesktop: HTMLButtonElement = document.createElement("button");
-  cartButtonDesktop.setAttribute("type", "button");
-  cartButtonDesktop.className = "cart-button-desktop";
-  cartButtonDesktop.addEventListener("click", cartDropDown);
+  // let cartButtonDesktop: HTMLButtonElement = document.createElement("button");
+  // cartButtonDesktop.setAttribute("type", "button");
+  // cartButtonDesktop.className = "cart-button-desktop";
+  // cartButtonDesktop.addEventListener("click", cartDropDown);
 
   let cartButton: HTMLButtonElement = document.createElement("button");
   cartButton.setAttribute("type", "button");
-  cartButton.className = "cart-button-mobile";
+  cartButton.className = "cart-button";
   cartButton.addEventListener("click", () => {
     location.href = "http://localhost:1234/pages/cart.html";
   });

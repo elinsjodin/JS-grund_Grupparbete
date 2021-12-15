@@ -69,7 +69,6 @@ export function goToDetailsPage() {
       productDetailsDiv.appendChild(addToCartBtn);
     }
   }
-  localStorage.setItem("Cartlist", JSON.stringify(cartList));
 }
 
 function pushToCart(e) {
