@@ -43,9 +43,9 @@ export function myNavBar() {
 
   navBarContainer.appendChild(navBarLogo);
 
-  let cartButton: HTMLButtonElement = document.createElement("button");
-  cartButton.setAttribute("type", "button");
-  cartButton.className = "cart-button-mobile";
+  let cartButton: HTMLButtonElement = document.getElementById(
+    "cart-button"
+  ) as HTMLButtonElement;
   cartButton.addEventListener("click", () => {
     location.href = "http://localhost:1234/pages/cart.html";
   });
@@ -63,19 +63,10 @@ export function myNavBar() {
   //   }
   // });
 
-  let cartLogo: HTMLAnchorElement = document.createElement("a");
-  cartLogo.className = "cart-logo";
-  cartLogo.innerHTML = "<i class='bi bi-bag'></i>";
-
-  cartButton.appendChild(cartLogo);
-
-  let cartCounter: HTMLSpanElement = document.createElement("span");
-  cartCounter.className = "cart-count";
-  cartCounter.id = "cart-count";
+  let cartCounter: HTMLSpanElement = document.getElementById(
+    "cart-count"
+  ) as HTMLSpanElement;
   cartCounter.innerHTML = cart.displayCartQty().toString();
 
-  cartButton.appendChild(cartCounter);
-
-  navBarContainer.appendChild(cartButton);
   cart.displayCartQty();
 }

@@ -18,6 +18,8 @@
     @include hamburger-button;
     @include nav-logo;
     .cart-button {
+      position: absolute;
+      right: 10px;
       border: none;
       background-color: $white;
       cursor: pointer;

@@ -12,7 +12,7 @@ let cartRows: HTMLDivElement = document.getElementById(
   "cart-rows"
 ) as HTMLDivElement;
 
-function ProductsInCart() {
+export function ProductsInCart() {
   cartRows.innerHTML = "";
 
   for (let i = 0; i < cart.items.length; i++) {
