@@ -40,10 +40,6 @@ export function myNavBar() {
   navBarContainer.appendChild(navBarLogo);
 
   // CARTBUTTON
-  let cartButtonDesktop: HTMLButtonElement = document.createElement("button");
-  cartButtonDesktop.setAttribute("type", "button");
-  cartButtonDesktop.className = "cart-button-desktop";
-  cartButtonDesktop.addEventListener("click", cartDropDown);
 
   let cartButton: HTMLButtonElement = document.createElement("button");
   cartButton.setAttribute("type", "button");
