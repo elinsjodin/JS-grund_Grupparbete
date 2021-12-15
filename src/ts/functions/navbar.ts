@@ -1,5 +1,3 @@
-import { cartDropDown } from "./cartModal";
-
 export function myNavBar() {
   let navBarContainer: HTMLElement = document.getElementById(
     "nav-container"
@@ -42,10 +40,6 @@ export function myNavBar() {
   navBarContainer.appendChild(navBarLogo);
 
   // CARTBUTTON
-  let cartButtonDesktop: HTMLButtonElement = document.createElement("button");
-  cartButtonDesktop.setAttribute("type", "button");
-  cartButtonDesktop.className = "cart-button-desktop";
-  cartButtonDesktop.addEventListener("click", cartDropDown);
 
   let cartButton: HTMLButtonElement = document.createElement("button");
   cartButton.setAttribute("type", "button");
