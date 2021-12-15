@@ -3,8 +3,6 @@ export function footer() {
     "footer-container"
   ) as HTMLDivElement;
 
-  let footer: HTMLDivElement = document.createElement("div");
-
   let contact: HTMLParagraphElement = document.createElement("p");
   contact.id = "contact";
   contact.innerText = "Contact";
@@ -21,9 +19,8 @@ export function footer() {
   brand.id = "brand";
   brand.innerHTML = "&#169;" + "NLP";
 
-  footer.appendChild(contact);
-  footer.appendChild(faq);
-  footer.appendChild(philosphy);
-  footer.appendChild(brand);
-  footerContainer.appendChild(footer);
+  footerContainer.appendChild(contact);
+  footerContainer.appendChild(faq);
+  footerContainer.appendChild(philosphy);
+  footerContainer.appendChild(brand);
 }
