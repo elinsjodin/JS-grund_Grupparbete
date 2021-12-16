@@ -41,6 +41,14 @@ export function myNavBar() {
     location.href = "http://localhost:1234/index.html";
   });
 
+  let navBarLogoDesktop: HTMLHeadingElement = document.createElement("p");
+  navBarLogoDesktop.className = "navbar-logo-desktop";
+  navBarLogoDesktop.innerText = "no label parfume";
+  navBarLogoDesktop.addEventListener("click", () => {
+    location.href = "http://localhost:1234/index.html";
+  });
+
+  navBarContainer.appendChild(navBarLogoDesktop);
   navBarContainer.appendChild(navBarLogo);
 
   let cartButton: HTMLButtonElement = document.getElementById(
