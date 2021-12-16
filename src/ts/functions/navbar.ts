@@ -50,19 +50,6 @@ export function myNavBar() {
     location.href = "http://localhost:1234/pages/cart.html";
   });
 
-  // let cartBtnOpen: boolean = false;
-  // cartButtonDesktop.addEventListener("click", () => {
-  //   if (!cartBtnOpen) {
-  //     cartButtonDesktop.classList.add("is-open");
-  //     cartDropDownContainer.classList.add("is-down");
-  //     cartBtnOpen = true;
-  //   } else {
-  //     cartButtonDesktop.classList.remove("is-open");
-  //     cartDropDownContainer.classList.remove("is-down");
-  //     cartBtnOpen = false;
-  //   }
-  // });
-
   let cartCounter: HTMLSpanElement = document.getElementById(
     "cart-count"
   ) as HTMLSpanElement;
