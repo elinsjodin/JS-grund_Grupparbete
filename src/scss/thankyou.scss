@@ -62,7 +62,11 @@
     flex-direction: column;
     align-self: center;
     align-items: center;
-    gap: 55px;
+    gap: 50px;
+    margin-top: 20px;
+    @include desktop {
+      margin-top: 40px;
+    }
     @include desktop {
       gap: 70px;
       max-width: 70%;
