@@ -41,9 +41,9 @@
         <li><a href="">Account</a></li>
       </ul>
     </nav>
+    <div id="main-form-wrapper">
     <div id="bs-container">
       <h2 id="shipping-adress">Shipping Information</h2>
-      <!-- FORM -->
       <form action="./thankyou.html" class="needs-validation" novalidate>
         <label for="country" class="form-label"><b>Country/region:</b></label>
         <select class="form-select" id="country-select" aria-label="country" required>
@@ -53,7 +53,7 @@
           <option data-code="FI" value="Finland">Finland</option>
           </option>
         </select>
-        <div class="row">
+        <div class="row ">
           <div class="col">
             <label for="firstname" class="form-label"><b>First Name:</b></label>
             <input type="text" class="form-control" id="first-name" aria-label="First name" value="Namn" required />
@@ -65,7 +65,7 @@
         </div>
         <div class="mb-3">
           <label for="Adress" class="form-label"><b>Address:</b></label>
-          <input type="text" class="form-control" id="adress" aria-describedby="adress" value="Adress" required />
+          <input type="text" class="form-control" id="address" aria-describedby="adress" value="Adress" required />
         </div>
         <div class="row">
           <div class="col">
@@ -113,13 +113,13 @@
             </div>
           </div>
           <p id="cost-total">Total:</p>
-        <div class="mb-3- form-check">
+          <div id="return-to-cart-div"><a id="return-to-cart" href="./cart.html">Return to cart</a></div>
+        <div class="mb-3-form-check">
           <button type="submit" class="btn-confirm">Place order</button>
         </div>
-        <div id="return-to-cart-div"><a id="return-to-cart" href="./cart.html">Return to cart</a></div>
       </form>
     </div>
-
+  </div>
     <div id="footer-container"></div>
     <script>
       (function() {
