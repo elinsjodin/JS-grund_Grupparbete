@@ -82,32 +82,63 @@
     z-index: 99;
   }
 }
-#bs-container {
-  padding-top: 71px;
-  min-height: 100vh;
-  #shipping-adress {
-    padding: 20px;
+#main-form-wrapper {
+  @include tablet {
+    display: flex;
+    justify-content: center;
   }
-  form {
-    padding: 20px;
-    label {
-      padding: 10px 0;
+  #bs-container {
+    padding-top: 71px;
+    min-height: 100vh;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 50%;
     }
-    .form-check-input {
-      margin-top: 12px;
+    #shipping-adress {
+      padding: 20px;
+      @include tablet {
+        margin-bottom: -10px;
+      }
     }
-    .btn-confirm {
-      border: none;
-      background-color: $black;
-      color: $white;
-      padding: 10px;
-      margin-bottom: 10px;
+    form {
+      padding: 20px;
+      label {
+        padding: 10px 0;
+        @include tablet {
+          padding: 5px 0;
+        }
+      }
+      .form-check-input {
+        margin-top: 12px;
+      }
+      .mb-3-form-check {
+        display: flex;
+        justify-content: flex-end;
+        .btn-confirm {
+          border: none;
+          background-color: $black;
+          color: $white;
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+        .btn-confirm:hover {
+          background-color: $white;
+          color: $black;
+          border: 1px solid $black;
+          transition: all 0.3s ease-in-out;
+        }
+      }
     }
-    .btn-confirm:hover {
-      background-color: $white;
-      color: $black;
-      border: 1px solid $black;
-      transition: all 0.3s ease-in-out;
+    #return-to-cart-div {
+      #return-to-cart {
+        color: $black;
+        text-decoration: none;
+        #return-to-cart :hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
