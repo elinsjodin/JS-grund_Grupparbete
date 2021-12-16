@@ -55,10 +55,7 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  margin-top: 10px;
-  @include desktop {
-    margin-top: 40px;
-  }
+  padding-top: 71px;
   #main-thankyou-container {
     display: flex;
     flex-direction: column;
