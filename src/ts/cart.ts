@@ -1,3 +1,4 @@
+import { footer } from "./functions/footer";
 import { myNavBar } from "./functions/navbar";
 import { Cart } from "./models/cart";
 
@@ -6,27 +7,40 @@ let cart = new Cart();
 window.onload = function () {
   myNavBar();
   ProductsInCart();
+  footer();
 };
 
-let cartRows: HTMLDivElement = document.getElementById(
-  "cart-rows"
+let cartWrapper: HTMLDivElement = document.getElementById(
+  "cart-wrapper"
 ) as HTMLDivElement;
 
 export function ProductsInCart() {
-  cartRows.innerHTML = "";
+  cartWrapper.innerHTML = "";
 
   for (let i = 0; i < cart.items.length; i++) {
+    let cartRows: HTMLDivElement = document.createElement("div");
+    cartRows.className = "cart-rows";
+
     let itemImg: HTMLImageElement = document.createElement("img");
-    itemImg.className = "productImg";
+    itemImg.className = "cart-item-img";
     itemImg.alt = "Perfumebottle";
     itemImg.src = cart.items[i].product.img;
+    let imageContainer: HTMLDivElement = document.createElement("div");
+    imageContainer.className = "cart-image-container";
 
     let itemName: HTMLSpanElement = document.createElement("span");
+    itemName.className = "cart-item-name";
     itemName.innerText = cart.items[i].product.name;
-
+    
     let itemPrice: HTMLSpanElement = document.createElement("span");
-    itemPrice.id = "cart-item-price";
+    itemPrice.className = "cart-item-price";
     itemPrice.innerText = cart.items[i].product.price + ":-";
+
+    let nameAndPriceContainer: HTMLDivElement = document.createElement("div");
+    nameAndPriceContainer.className = "name-price-container";
+    // let priceContainer: HTMLDivElement = document.createElement("div");
+    // priceContainer.className = "cart-price-container";
+
 
     let subBtn: HTMLButtonElement = document.createElement("button");
     subBtn.id = "subBtn";
@@ -40,7 +54,7 @@ export function ProductsInCart() {
 
     let qtyInput: HTMLInputElement = document.createElement("input");
     qtyInput.setAttribute("readonly", "readonly");
-    qtyInput.id = "qtyInput";
+    qtyInput.className = "qtyInput";
     qtyInput.value = cart.items[i].qty.toString();
 
     let addBtn: HTMLButtonElement = document.createElement("button");
@@ -60,18 +74,24 @@ export function ProductsInCart() {
       cart.removeItemFromCart(cart.items[i].product);
       ProductsInCart();
     });
-    cartRows.appendChild(itemImg);
-    cartRows.appendChild(itemName);
-    cartRows.appendChild(itemPrice);
+
+    // cartRows.appendChild(priceContainer);
+    // priceContainer.appendChild(itemPrice);
+    imageContainer.appendChild(itemImg);
+    nameAndPriceContainer.appendChild(itemName);
+    nameAndPriceContainer.appendChild(itemPrice);
+    cartRows.appendChild(imageContainer);
+    cartRows.appendChild(nameAndPriceContainer);
     cartRows.appendChild(subBtn);
     cartRows.appendChild(qtyInput);
     cartRows.appendChild(addBtn);
     cartRows.appendChild(deleteBtn);
+    cartWrapper.appendChild(cartRows);
   }
 
   let total = cart.updateCartTotal();
   let cartTotal: HTMLDivElement = document.getElementById(
-    "cart-total"
+    "total-cart-price"
   ) as HTMLDivElement;
   cartTotal.innerHTML = "Total: " + total.toString() + ":-";
   cart.displayCartQty();
