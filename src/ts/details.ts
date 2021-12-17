@@ -17,7 +17,6 @@ window.onload = function () {
 
 let productsInList = localStorage.getItem("Productlist");
 let productDetails: Product[] = JSON.parse(productsInList);
-// console.log(productDetails);
 
 let detailsHeroContainer: HTMLDivElement = document.getElementById(
   "details-hero-wrapper"

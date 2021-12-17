@@ -119,6 +119,20 @@
       .form-check-input {
         margin-top: 12px;
       }
+      #return-to-cart-div {
+        a {
+          color: $black;
+          text-decoration: none;
+        }
+        a:hover {
+          cursor: pointer;
+          border-bottom: 1px solid $black;
+          transition: all 0.1s ease-in-out;
+        }
+        #arrow-2 {
+          font-size: 13px;
+        }
+      }
       .mb-3-form-check {
         display: flex;
         justify-content: flex-end;
@@ -134,15 +148,6 @@
           color: $black;
           border: 1px solid $black;
           transition: all 0.3s ease-in-out;
-        }
-      }
-    }
-    #return-to-cart-div {
-      #return-to-cart {
-        color: $black;
-        text-decoration: none;
-        #return-to-cart :hover {
-          cursor: pointer;
         }
       }
     }

@@ -91,10 +91,27 @@
 #main-cart-div {
   padding-top: 71px;
   min-height: 100vh;
+  #return-to-shop-div {
+    margin-top: 10px;
+    margin-left: 10px;
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+    a:hover {
+      cursor: pointer;
+      border-bottom: 1px solid $black;
+      transition: all 0.1s ease-in-out;
+    }
+    #arrow-1 {
+      font-size: 13px;
+    }
+  }
   #cart-titel-div {
     padding: 20px;
     #cart-title {
       padding: 20px;
+      margin-left: -120px;
       border-bottom: 1px solid $light-gray;
     }
     @include desktop {
