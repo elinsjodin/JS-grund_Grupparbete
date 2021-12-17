@@ -67,8 +67,10 @@ export function goToDetailsPage() {
 
       let ingContainer: HTMLDivElement = document.createElement("div");
       ingContainer.className = "dropdown-panel";
+      ingContainer.classList.add("one");
       let descContainer: HTMLDivElement = document.createElement("div");
       descContainer.className = "dropdown-panel";
+      descContainer.classList.add("two");
 
       let descTitle: HTMLHeadingElement = document.createElement("h4");
       descTitle.className = "toggle-panel";

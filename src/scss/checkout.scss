@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $light-gray;
     @include hamburger-button;
     @include nav-logo;
     .cart-button {
@@ -37,6 +37,39 @@
         color: $black;
       }
     }
+    #nav-desktop {
+      display: none;
+      visibility: hidden;
+      list-style-type: none;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        height: 70px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      li:hover {
+        border-bottom: 1px solid $black;
+        transition: all 0.3s ease-in-out;
+      }
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+    @include desktop {
+      #nav-desktop {
+        display: flex;
+        visibility: visible;
+      }
+    }
+  }
+  @include desktop {
+    #nav-container {
+      padding: 0;
+    }
   }
   @include dropdown-menu;
   #dropdown-menu.is-down {
@@ -46,6 +79,7 @@
     width: 100%;
     height: 100vh;
     background-color: $white;
+    z-index: 99;
   }
 }
 #main-form-wrapper {

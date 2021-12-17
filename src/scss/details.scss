@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $light-gray;
     @include hamburger-button;
     @include nav-logo;
     .cart-button {
@@ -37,6 +37,39 @@
         color: $black;
       }
     }
+    #nav-desktop {
+      display: none;
+      visibility: hidden;
+      list-style-type: none;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        height: 70px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      li:hover {
+        border-bottom: 1px solid $black;
+        transition: all 0.3s ease-in-out;
+      }
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+    @include desktop {
+      #nav-desktop {
+        display: flex;
+        visibility: visible;
+      }
+    }
+  }
+  @include desktop {
+    #nav-container {
+      padding: 0;
+    }
   }
   @include dropdown-menu;
   #dropdown-menu.is-down {
@@ -46,6 +79,7 @@
     width: 100%;
     height: 100vh;
     background-color: $white;
+    z-index: 99;
   }
 }
 #details-hero-wrapper {
@@ -103,6 +137,39 @@
         transition: all 0.5s ease-in-out;
       }
     }
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(7, 90px);
+      gap: 0px;
+      flex-flow: unset;
+      .details-name {
+        grid-column: 6 / span 5;
+        grid-row: 2;
+        padding: 40px 40px 10px 30px;
+      }
+      .details-price {
+        grid-column: 6 / span 5;
+        grid-row: 3;
+        margin: 0 19px;
+      }
+      .details-img-container {
+        grid-column: 1 / span 5;
+        grid-row: 2 / span 5;
+      }
+      .dropdown-panel {
+        padding: 23px;
+      }
+      .dropdown-panel.one {
+        grid-column: 6 / span 4;
+        grid-row: 5;
+        margin-top: 30px;
+      }
+      .dropdown-panel.two {
+        grid-column: 6 / span 4;
+        grid-row: 4;
+      }
+    }
   }
   .button-container {
     margin: 40px 0px 40px 0px;
@@ -124,6 +191,14 @@
       color: $black;
       border: 1px solid $black;
       transition: all 0.3s ease-in-out;
+    }
+    @include desktop {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      #add-to-cart-btn {
+        width: 25%;
+      }
     }
   }
 }

@@ -56,6 +56,12 @@
   #hamburger-btn.is-open .menu-btn::after {
     transform: rotate(-45deg) translate(15px, 15px);
   }
+  @include desktop {
+    #hamburger-btn {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
 // NAVBAR LOGO MIXIN
 @mixin nav-logo {
@@ -67,7 +73,29 @@
     cursor: pointer;
     letter-spacing: 4rem;
   }
+  .navbar-logo-desktop {
+    display: none;
+    visibility: hidden;
+    padding-right: 220px;
+    margin: 0;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  @include desktop {
+    .navbar-logo {
+      display: none;
+      visibility: hidden;
+    }
+    .navbar-logo-desktop {
+      display: block;
+      visibility: visible;
+    }
+  }
 }
+
 // DROPDOWN MENU
 @mixin dropdown-menu {
   #dropdown-menu {
