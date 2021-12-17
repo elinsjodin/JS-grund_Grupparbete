@@ -11,6 +11,6 @@ window.onload = function () {
   let checkoutTotal: HTMLParagraphElement = document.getElementById(
     "cost-total"
   ) as HTMLParagraphElement;
-  checkoutTotal.innerHTML = "Total: " + totalCheckout.toString() + ":-";
+  checkoutTotal.innerHTML = "Total: " + totalCheckout.toString() + " kr";
   cart.displayCartQty();
 };

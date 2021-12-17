@@ -31,16 +31,15 @@ export function ProductsInCart() {
     let itemName: HTMLSpanElement = document.createElement("span");
     itemName.className = "cart-item-name";
     itemName.innerText = cart.items[i].product.name;
-    
+
     let itemPrice: HTMLSpanElement = document.createElement("span");
     itemPrice.className = "cart-item-price";
-    itemPrice.innerText = cart.items[i].product.price + ":-";
+    itemPrice.innerText = cart.items[i].product.price + " kr";
 
     let nameAndPriceContainer: HTMLDivElement = document.createElement("div");
     nameAndPriceContainer.className = "name-price-container";
     // let priceContainer: HTMLDivElement = document.createElement("div");
     // priceContainer.className = "cart-price-container";
-
 
     let subBtn: HTMLButtonElement = document.createElement("button");
     subBtn.id = "subBtn";
@@ -93,7 +92,7 @@ export function ProductsInCart() {
   let cartTotal: HTMLDivElement = document.getElementById(
     "total-cart-price"
   ) as HTMLDivElement;
-  cartTotal.innerHTML = "Total: " + total.toString() + ":-";
+  cartTotal.innerHTML = "Total: " + total.toString() + " kr";
   cart.displayCartQty();
 }
 

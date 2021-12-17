@@ -88,23 +88,56 @@
     z-index: 99;
   }
 }
-#hero-div {
+#info-div {
   padding-top: 71px;
+  display: flex;
+  justify-content: center;
+  .perfume-explore-div {
+    @include desktop {
+      min-width: 40%;
+      max-width: 40%;
+      line-height: 50px;
+    }
+    .perfume-explore {
+      font-size: 20px;
+      margin-top: 10px;
+      text-align: center;
+      @include desktop {
+        font-size: 40px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+#hero-div {
   display: flex;
   flex-flow: column nowrap;
   gap: 20px;
+  align-items: center;
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .product-div {
     padding: 20px;
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
+    justify-content: center;
     .product-name,
     .product-price {
       padding-left: 20px;
       font-size: 2rem;
+      align-self: center;
+    }
+    .product-img,
+    .product-name {
+      cursor: pointer;
     }
     .product-img {
-      cursor: pointer;
+      @include tablet {
+        width: 100%;
+      }
     }
     .product-name {
       font-weight: 100;

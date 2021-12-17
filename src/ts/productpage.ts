@@ -5,7 +5,6 @@ import { products } from "./functions/productList";
 import { productList } from "./functions/localStorage";
 import { goToDetailsPage } from "./details";
 
-
 window.onload = function () {
   myNavBar();
   listOfItemsInDetails();
@@ -33,7 +32,7 @@ function start() {
 
     let price: HTMLParagraphElement = document.createElement("p");
     price.className = "product-price";
-    price.innerHTML = productList[i].price + "kr".toString();
+    price.innerHTML = productList[i].price + " kr".toString();
 
     // let detailsLink: HTMLParagraphElement = document.createElement("p");
     // detailsLink.id = "detailsLink";
