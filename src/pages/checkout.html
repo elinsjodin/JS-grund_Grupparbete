@@ -52,12 +52,13 @@
       <h2 id="shipping-adress">Shipping Information</h2>
       <form action="./thankyou.html" class="needs-validation" novalidate>
         <label for="country" class="form-label"><b>Country/region:</b></label>
-        <select class="form-select" id="country-select" aria-label="country" required>
-          <option selected><option data-code="SE" value="Sweden">Sweden</option>
+        <select class="form-select" id="country-select" aria-label="country" value="Sweden" required>
+          <!-- <option selected> -->
+          <option data-code="SE" value="Sweden">Sweden</option>
           <option data-code="NO" value="Norway">Norway</option>
           <option data-code="DE" value="Denmark">Denmark</option>
           <option data-code="FI" value="Finland">Finland</option>
-          </option>
+          <!-- </option> -->
         </select>
         <div class="row ">
           <div class="col">
@@ -80,7 +81,7 @@
           </div>
           <div class="col">
             <label for="city" class="form-label"><b>City/town:</b></label>
-            <input type="text" class="form-control" id="city" aria-label="City" value="Stad" required />
+            <input type="text" class="form-control" id="city" aria-label="City" required />
           </div>
         </div>
         <div class="row">

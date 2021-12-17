@@ -38,8 +38,6 @@ export function ProductsInCart() {
 
     let nameAndPriceContainer: HTMLDivElement = document.createElement("div");
     nameAndPriceContainer.className = "name-price-container";
-    // let priceContainer: HTMLDivElement = document.createElement("div");
-    // priceContainer.className = "cart-price-container";
 
     let subBtn: HTMLButtonElement = document.createElement("button");
     subBtn.id = "subBtn";
@@ -74,8 +72,6 @@ export function ProductsInCart() {
       ProductsInCart();
     });
 
-    // cartRows.appendChild(priceContainer);
-    // priceContainer.appendChild(itemPrice);
     imageContainer.appendChild(itemImg);
     nameAndPriceContainer.appendChild(itemName);
     nameAndPriceContainer.appendChild(itemPrice);

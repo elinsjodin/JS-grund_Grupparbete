@@ -34,13 +34,6 @@ function start() {
     price.className = "product-price";
     price.innerHTML = productList[i].price + " kr".toString();
 
-    // let detailsLink: HTMLParagraphElement = document.createElement("p");
-    // detailsLink.id = "detailsLink";
-    // detailsLink.innerHTML = "View product";
-    // detailsLink.addEventListener("click", () => {
-    //   redirect(productList[i].id);
-    // });
-
     let productName: HTMLHeadElement = document.createElement("h2");
     productName.className = "product-name";
     productName.innerHTML = productList[i].name;
@@ -52,7 +45,6 @@ function start() {
     productContainer.appendChild(productName);
     productContainer.appendChild(price);
     productDiv.appendChild(productContainer);
-    // productDiv.appendChild(detailsLink);
   }
 
   localStorage.setItem("Productlist", JSON.stringify(productList));
