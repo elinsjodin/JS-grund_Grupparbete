@@ -63,7 +63,7 @@
       margin-top: 10px;
       text-align: center;
       @include desktop {
-        font-size: 30px;
+        font-size: 40px;
         margin-top: 20px;
       }
     }
@@ -75,8 +75,8 @@
   gap: 20px;
   align-items: center;
   @include desktop {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   .product-div {
     padding: 20px;
@@ -93,6 +93,11 @@
     .product-img,
     .product-name {
       cursor: pointer;
+    }
+    .product-img {
+      @include tablet {
+        width: 100%;
+      }
     }
     .product-name {
       font-weight: 100;

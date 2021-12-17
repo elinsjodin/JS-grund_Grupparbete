@@ -20,7 +20,7 @@ window.onload = function () {
 
   let orderTotal: HTMLParagraphElement = document.createElement("p");
   orderTotal.id = "order-total";
-  orderTotal.innerHTML = "Total: " + cart.updateCartTotal() + ":-";
+  orderTotal.innerHTML = "Total: " + cart.updateCartTotal() + " kr";
 
   let hr2: HTMLHRElement = document.createElement("hr");
   hr2.className = "solid";

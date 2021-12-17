@@ -39,26 +39,26 @@ export function goToDetailsPage() {
       productImg.className = "details-img";
       productImg.alt = "Perfumebottle";
       productImg.src = productDetails[i].img;
-      
+
       let prodctPrice: HTMLParagraphElement = document.createElement("p");
       prodctPrice.className = "details-price";
-      prodctPrice.innerHTML = productDetails[i].price + "kr".toString();
-      
+      prodctPrice.innerHTML = productDetails[i].price + " kr".toString();
+
       let productName: HTMLHeadElement = document.createElement("h2");
       productName.className = "details-name";
       productName.innerHTML = productDetails[i].name;
-      
+
       let productDesc: HTMLParagraphElement = document.createElement("p");
       productDesc.className = "details-desc";
       productDesc.innerHTML = productDetails[i].detail.desc;
-      
+
       let productIng: HTMLParagraphElement = document.createElement("p");
       productIng.className = "details-ing";
       productIng.innerHTML = productDetails[i].detail.ing;
 
       let buttonContainer: HTMLDivElement = document.createElement("div");
       buttonContainer.className = "button-container";
-      
+
       let addToCartBtn: HTMLButtonElement = document.createElement("button");
       addToCartBtn.setAttribute("type", "button");
       addToCartBtn.id = "add-to-cart-btn";
@@ -66,20 +66,19 @@ export function goToDetailsPage() {
       addToCartBtn.addEventListener("click", pushToCart);
 
       let ingContainer: HTMLDivElement = document.createElement("div");
-      ingContainer.className = "dropdown-panel"
+      ingContainer.className = "dropdown-panel";
       let descContainer: HTMLDivElement = document.createElement("div");
-      descContainer.className = "dropdown-panel"
+      descContainer.className = "dropdown-panel";
 
       let descTitle: HTMLHeadingElement = document.createElement("h4");
       descTitle.className = "toggle-panel";
       descTitle.innerText = "ABOUT FRAGRANCE";
       let toggleOpen: boolean = false;
-      descTitle.addEventListener("click", () =>{
-        if(!toggleOpen){
+      descTitle.addEventListener("click", () => {
+        if (!toggleOpen) {
           productDesc.classList.add("toggle-panel-active");
           toggleOpen = true;
-        }
-        else{
+        } else {
           productDesc.classList.remove("toggle-panel-active");
           toggleOpen = false;
         }
@@ -89,11 +88,10 @@ export function goToDetailsPage() {
       ingTitle.className = "toggle-panel";
       ingTitle.innerText = "INGREDIENTS";
       ingTitle.addEventListener("click", () => {
-        if(!toggleOpen){
+        if (!toggleOpen) {
           productIng.classList.add("toggle-panel-active");
           toggleOpen = true;
-        }
-        else{
+        } else {
           productIng.classList.remove("toggle-panel-active");
           toggleOpen = false;
         }
