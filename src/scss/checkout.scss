@@ -26,6 +26,7 @@
       right: 10px;
       border: none;
       background-color: $white;
+      z-index: 998;
       cursor: pointer;
       span {
         position: relative;
@@ -40,9 +41,13 @@
     #nav-desktop {
       display: none;
       visibility: hidden;
+      margin-bottom: 0;
+      padding-left: 2rem;
       list-style-type: none;
       justify-content: space-between;
       align-items: center;
+      gap: 15px;
+      z-index: 998;
       li {
         height: 70px;
         padding: 10px;
@@ -69,6 +74,7 @@
   @include desktop {
     #nav-container {
       padding: 0;
+      justify-content: flex-start;
     }
   }
   @include dropdown-menu;

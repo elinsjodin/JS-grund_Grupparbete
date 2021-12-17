@@ -76,10 +76,10 @@
   .navbar-logo-desktop {
     display: none;
     visibility: hidden;
-    padding-right: 220px;
+    position: absolute;
+    width: 100%;
     margin: 0;
     font-size: 1.5rem;
-    flex-grow: 1;
     text-align: center;
     cursor: pointer;
     text-transform: uppercase;
