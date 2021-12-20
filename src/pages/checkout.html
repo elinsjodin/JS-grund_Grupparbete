@@ -51,7 +51,7 @@
     <div id="bs-container">
       <h2 id="shipping-adress">Shipping Information</h2>
       <form action="./thankyou.html" class="needs-validation" novalidate>
-        <label for="country" class="form-label"><b>Country/region:</b></label>
+        <label for="country" class="form-label"><b>*Country/region:</b></label>
         <select class="form-select" id="country-select" aria-label="country" value="Sweden" required>
           <!-- <option selected> -->
           <option data-code="SE" value="Sweden">Sweden</option>
@@ -62,35 +62,35 @@
         </select>
         <div class="row ">
           <div class="col">
-            <label for="firstname" class="form-label"><b>First Name:</b></label>
+            <label for="firstname" class="form-label"><b>*First Name:</b></label>
             <input type="text" class="form-control" id="first-name" aria-label="First name" value="Namn" required />
           </div>
           <div class="col">
-            <label for="lastname" class="form-label"><b>Last Name:</b></label>
+            <label for="lastname" class="form-label"><b>*Last Name:</b></label>
             <input type="text" class="form-control" id="last-name" aria-label="Last name" value="Efternamn" required />
           </div>
         </div>
         <div class="mb-3">
-          <label for="Adress" class="form-label"><b>Address:</b></label>
+          <label for="Adress" class="form-label"><b>*Address:</b></label>
           <input type="text" class="form-control" id="address" aria-describedby="adress" value="Adress" required />
         </div>
         <div class="row">
           <div class="col">
-            <label for="postalcode" class="form-label"><b>Postal code:</b></label>
+            <label for="postalcode" class="form-label"><b>*Postal code:</b></label>
             <input type="text" class="form-control" id="postal-code" aria-label="Postal code" value="Postnummer" required />
           </div>
           <div class="col">
-            <label for="city" class="form-label"><b>City/town:</b></label>
+            <label for="city" class="form-label"><b>*City/town:</b></label>
             <input type="text" class="form-control" id="city" aria-label="City" required />
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <label for="email" class="form-label"><b>E-mail:</b></label>
+            <label for="email" class="form-label"><b>*E-mail:</b></label>
             <input type="email" class="form-control" id="email" placeholder="nlp@email.com" value="email@email.com" required />
           </div>
           <div class="col">
-            <label for="phone" class="form-label"><b>Phone:</b></label>
+            <label for="phone" class="form-label"><b>*Phone:</b></label>
             <input type="tel" class="form-control" id="phone" aria-label="Phone" placeholder="xxx-xxxxxxx" pattern="[0-9]{3}-[0-9]{7}" value="000-0000000" required="required" />
           </div>
         </div>
@@ -116,7 +116,7 @@
                 <option value="2">Transfer</option>
                 <option value="3">Pay Later</option>
               </select>
-              <label for="Payment">Choose payment method</label>
+              <label for="Payment">*Choose payment method</label>
             </div>
           </div>
           <p id="cost-total">Total:</p>
