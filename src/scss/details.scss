@@ -89,6 +89,9 @@
   }
 }
 #details-hero-wrapper {
+  @include tablet {
+    margin-bottom: 80px;
+  }
   #product-details-container {
     padding-top: 71px;
     display: flex;
@@ -216,8 +219,9 @@
     }
     @include desktop {
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      justify-content: center;
+      margin-left: 115px;
+      margin-top: -100px;
       #add-to-cart-btn {
         width: 25%;
       }
