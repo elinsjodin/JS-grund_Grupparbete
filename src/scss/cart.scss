@@ -111,11 +111,11 @@
     padding: 20px;
     #cart-title {
       padding: 20px;
-      margin-left: -120px;
       border-bottom: 1px solid $light-gray;
     }
     @include desktop {
       width: 51%;
+      margin-left: -120px;
     }
   }
   #cart-products-div {
