@@ -26,7 +26,7 @@ export function products() {
   );
   let pr4: Product = new Product(
     perfumeimage,
-    "No.4" + " " + "Citrus Noir",
+    "No.4" + " " + "Citron Noir",
     1050,
     "4",
     detailsList[3]

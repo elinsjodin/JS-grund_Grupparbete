@@ -15,7 +15,7 @@ export function listOfItemsInDetails() {
     "Alcohol, Aqua, Parfume (fragrance)."
   );
   let itemFour: Detail = new Detail(
-    "Our most popular fragrance is this woody, smoky scent made from notes of black lime and dried lemon.",
+    "Our most popular fragrance is this woody, smokey scent made from notes of black lime and dried lemon.",
     "Alcohol, Aqua, Parfume (fragrance)."
   );
   let itemFive: Detail = new Detail(
@@ -35,7 +35,7 @@ export function listOfItemsInDetails() {
     "Alcohol, Aqua, Parfume (fragrance)."
   );
   let itemNine: Detail = new Detail(
-    "This soft scent is made of floral notes such as rose and patchouli, topped with yang-yang and vanilla flower.",
+    "This soft scent is made of floral notes such as rose and patchouli, topped with ylang-ylang and vanilla flower.",
     "Alcohol, Aqua, Parfume (fragrance)."
   );
   let itemTen: Detail = new Detail(
