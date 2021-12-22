@@ -94,6 +94,7 @@
   #return-to-shop-div {
     margin-top: 10px;
     margin-left: 10px;
+    margin-bottom: 100px;
     a {
       color: $black;
       text-decoration: none;
@@ -109,6 +110,9 @@
   }
   #cart-titel-div {
     padding: 20px;
+    @include desktop {
+      margin-top: 20px;
+    }
     #cart-title {
       padding: 20px;
       border-bottom: 1px solid $light-gray;
